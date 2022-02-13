@@ -3,7 +3,7 @@ export default function News(){
         <section id="news">
             <div className="inner">
                 <main>
-                    <h1>News</h1>                    
+                    <h1>Rcent News</h1>                    
                 </main>
             </div>
         </section>
