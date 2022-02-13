@@ -100,11 +100,7 @@ export default function Location(){
                                    setIndex(index)}}>{data.title}</button>  
                             )
                         })}
-                        
-                    {/* 맵이 들어갈 공간 */}
-                    <div id="map" ref={container}></div>
-
-                    {/* 교통정보 버튼 */}
+                    </nav>    
                     <nav className="traffic">
                         <button onClick={()=>{
                             map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
@@ -114,8 +110,13 @@ export default function Location(){
                         }}>교통정보 끄기</button>
                     </nav>
 
+                    {/* 맵이 들어갈 공간 */}
+                    <div id="map" ref={container}></div>
 
-                    </nav>
+                    {/* 교통정보 버튼 */}
+
+
+                    
                 </section>
             </div>
         </main>

@@ -54,8 +54,7 @@
                     padding: 30px;
                     border-bottom: 1px solid #ccc;
                     margin-bottom: 30px;
-                    background: rgba(253, 245, 230, 0.5);
-                    &:last-child{border-bottom: none;}
+                    background: rgba(253, 245, 230, 0.2);
 
                     .post{
                         // 초기화면
@@ -102,7 +101,7 @@
                             height: 30px;
                             font: 12px/1 'arial';
                             letter-spacing: 1px;
-                            background: rgba(255, 241, 214, 0.9);
+                            background: rgba(255, 241, 214, 0.5);
                             border: 1px solid #fff;
                             transition: .5s;
     
