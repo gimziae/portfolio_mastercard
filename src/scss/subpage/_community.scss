@@ -1,11 +1,9 @@
 .community{
     .inner{
         section{
-            height: 1000px;
             // 입력창
             .inputBox{
-                float: left;
-                width: 50%;
+                width: 100%;
                 padding: 30px;
                 margin-bottom: 50px;
 
@@ -27,7 +25,7 @@
                     justify-content: space-evenly;
                     align-items: center;
                     button{
-                        width: 120px;
+                        width: 250px;
                         height: 30px;
                         font: 12px/1 'arial';
                         letter-spacing: 1px;
@@ -44,10 +42,8 @@
             }
             // 출력창
             .showList{
-                float: right;
-                width: 50%;
+                width: 100%;
                 padding: 30px;
-                border-left: 1px solid #aaa;
 
                 article{
                     width: 100%;
@@ -93,12 +89,11 @@
                     
                     .btns{
                         //초기화면
-                        display: flex;
-                        justify-content: space-evenly;
-                        align-items: center;
+                        text-align: right;
                         button{
                             width: 120px;
                             height: 30px;
+                            margin-left: 50px;
                             font: 12px/1 'arial';
                             letter-spacing: 1px;
                             background: rgba(255, 241, 214, 0.5);
