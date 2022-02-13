@@ -9,10 +9,10 @@ export default function Header(props){
         <header className={props.type}>
             <div className="inner">
                 <h1>
-                    <NavLink exact to='/'>REACT portfolio</NavLink>
+                    <NavLink exact to='/'>REACT</NavLink>
                 </h1>     
 
-                <ul id="gnb">
+                <ul id="gnbWeb">
                     <li>
                         <NavLink activeStyle={active} to='/department'>Department</NavLink>
                     </li>
@@ -33,7 +33,7 @@ export default function Header(props){
                     </li>
                 </ul>       
 
-                <FontAwesomeIcon icon={faEllipsis} />
+                <FontAwesomeIcon icon={faEllipsis}  id='gnbMo'/>
             </div>
         </header>
     )
