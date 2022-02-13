@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react/cjs/react.development"
+import { useEffect, useRef } from "react"
 
 export default function Youtube(){
     let main = useRef(null);
