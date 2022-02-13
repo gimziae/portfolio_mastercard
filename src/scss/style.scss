@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+$tablet: 1179px;
+$mobile: 649px;
+
 //common
 @import "common/reset";
 @import "common/layout";
@@ -7,14 +10,14 @@
 @import "common/footer";
 
 //main
-@import "main/visual";
-@import "main/intro";
-@import "main/news";
+@import "mainpage/visual";
+@import "mainpage/intro";
+@import "mainpage/news";
 
 //sub
-@import "sub/department";
-@import "sub/community";
-@import "sub/gallery";
-@import "sub/youtube";
-@import "sub/location";
-@import "sub/join";
+@import "subpage/department";
+@import "subpage/community";
+@import "subpage/gallery";
+@import "subpage/youtube";
+@import "subpage/location";
+@import "subpage/join";
