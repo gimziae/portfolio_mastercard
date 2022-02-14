@@ -1,13 +1,116 @@
 #intro{
     width: 100%;
-    height: 50vh;
+    height: 80vh;
     padding: 100px 0;
+    position: relative;
+    
+    &::after{
+        content: '';
+        display: block;
+        width: 1180px;
+        height: 1px;
+        background: $elite;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     .inner{
-        border-bottom: 1px solid $elite;
         width: 1180px;
         height: 100%;
         margin: 0 auto;
         position: relative;
+
+        .btns{
+            // border: 1px solid red;
+            width: 80px;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+
+            li{
+                float: left;
+                width: 25px;
+                height: 25px;
+                background: transparent;
+                border-radius: 50%;
+                border: 3px solid #787878;
+                margin: 0 5px;
+                box-sizing: border-box;
+                cursor: pointer;
+                
+                &.on{
+                    background: $standard;
+                    border: none;
+                }
+            }
+        }
+        &::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        article{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            //border: 1px solid red;
+            float: left;
+            
+
+
+            .txt{
+                width: 60%;
+                float: left;
+                //position: relative;
+                >span{
+                    font: 14px/1 'arial';
+                    color: #767676;
+                    display: block;
+                    margin-bottom: 20px;
+                }
+                h1{
+                    font: normal 60px/1.2 'arial';
+                    color: $standard;
+                    
+                    img{
+                        height: 20px;
+                        transform: translate(-10px ,-15px);
+                    }
+                }
+                .con{
+                    width: 210px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-90%, -80%);
+                    p{
+                        color: #ccc;
+                        font: 16px/1.6 'arial';
+                        margin-bottom: 50px;
+                    }
+                    a{
+                        span{
+                            color: $onblackbg;
+                            text-decoration: underline;
+                        }
+                    }                    
+                }
+
+            }
+            .pic{
+                width: 40%;
+                height: 55vh;
+                float: right;
+                background: #111;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
     }
 }

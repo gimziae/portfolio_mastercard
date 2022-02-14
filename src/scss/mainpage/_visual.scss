@@ -2,13 +2,90 @@
     width: 100%;
     height: 100vh;
     padding: 100px 0;
-    padding-top: 150px;
+    padding-top: 130px;
+    position: relative;
+
+    &::after{
+        content: '';
+        display: block;
+        width: 1180px;
+        height: 1px;
+        background: $elite;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     .inner{
-        border-bottom: 1px solid $elite;
         width: 1180px;
         height: 100%;
         margin: 0 auto;
         position: relative;
+        main{
+            width: 100%;
+            height: 100%;
+
+            .welcome{
+                font: normal 14px/1 'arial';
+                color: #767676;
+                margin-bottom: 20px;
+            }
+
+            .txt{
+                width: 100%;
+                position: relative;
+                margin-bottom: 20px;
+                // border: 1px solid red;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+
+                .mainTitle{
+                    width: 65%;
+                    float: left;
+                    h1{
+                        font: normal 60px/1.2 'arial';
+                        color: $standard;
+                        img{
+                            height: 48px;
+                            padding-right: 20px;
+                            transform: translate(10px, 3px);
+                        }
+                        span{color: $onblackbg;}
+                    }
+
+                }
+                .subTitle{
+                    width: 30%;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    // border: 1px solid red;
+                    p{
+                        font: normal 16px/1.4 'arial';
+                        color: #999;
+                        span{color: $onblackbg;}
+                    }
+                }
+            }
+            .pic{
+                width: 100%;
+                height: calc(100% - 250px);
+                background: #111;
+                color: $standard;
+                text-align: center;
+                font-size: 100px;
+                position: relative;
+                video{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
     }
 }

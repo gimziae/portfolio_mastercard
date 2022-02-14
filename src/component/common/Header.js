@@ -1,17 +1,19 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 
+// fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 
 export default function Header(props){
-    const active = {color: 'orange'}
+    const active = {color: '#ffb850'}
     const path = process.env.PUBLIC_URL;
     return(
         <header className={props.type}>
             <div className="inner">
                 <h1>
                     <NavLink exact to='/'>
-                        <img src={path+'/img/logo.png'} />
+                        <img className='logo' src={path+'/img/logo.png'} />
                     </NavLink>
                 </h1>     
 
@@ -31,10 +33,15 @@ export default function Header(props){
                     <li>
                         <NavLink activeStyle={active} to='/location'>Location</NavLink> 
                     </li>
+                </ul>      
+                <ul className='utilWeb'>
                     <li>
                         <NavLink activeStyle={active} to='/join'>Join</NavLink> 
                     </li>
-                </ul>       
+                    <li>
+                        <FontAwesomeIcon icon={faUser} />
+                    </li>
+                </ul> 
 
                 <FontAwesomeIcon icon={faEllipsis}  id='gnbMo'/>
             </div>
