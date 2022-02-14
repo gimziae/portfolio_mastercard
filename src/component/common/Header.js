@@ -2,14 +2,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 
+
 export default function Header(props){
     const active = {color: 'orange'}
-
+    const path = process.env.PUBLIC_URL;
     return(
         <header className={props.type}>
             <div className="inner">
                 <h1>
-                    <NavLink exact to='/'>REACT</NavLink>
+                    <NavLink exact to='/'>
+                        <img src={path+'/img/logo.png'} />
+                    </NavLink>
                 </h1>     
 
                 <ul id="gnbWeb">

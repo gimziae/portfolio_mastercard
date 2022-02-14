@@ -3,6 +3,25 @@
 $tablet: 1179px;
 $mobile: 749px;
 
+// brandcolor
+$red: #eb001b;
+$yellow: #f79e1b;
+$orange: #ff5f00;
+
+// backgrond
+$blackbg : #212121;
+$onblackbg : #ffb850;
+
+$whitebg : #f3f3f3;
+$onwhitebg : #ffbe99;
+
+// cardcolor
+$wolrd : #304350;
+$standard : #e4e4e4;
+$elite : #2e2e2e; 
+
+
+
 //common
 @import "common/reset";
 @import "common/layout";
@@ -13,6 +32,7 @@ $mobile: 749px;
 @import "mainpage/visual";
 @import "mainpage/intro";
 @import "mainpage/news";
+@import "mainpage/info";
 
 //sub
 @import "subpage/department";
@@ -21,3 +41,7 @@ $mobile: 749px;
 @import "subpage/youtube";
 @import "subpage/location";
 @import "subpage/join";
+
+body{
+    background-color: $blackbg;
+}

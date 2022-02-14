@@ -42,9 +42,9 @@ header{
         top: 0;
         left: 0;
         z-index: 5;
-        border-bottom: 2px solid #fff;
         
         .inner{
+            border-bottom: 1px solid $elite;
             h1{
                 left: 2vw;
                 a{

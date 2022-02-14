@@ -1,16 +1,94 @@
 footer{
     width: 100%;
-    border-top: 1px solid #ccc;
     padding: 50px 0px;
+    border-top: 1px solid $elite;
     
     .inner{
         width: 1180px; 
         margin: 0 auto;
-        
-        p{
-            font: 12px/1 'arial';
-            color: #888;
-            text-align: center;
+        // border: 1px solid red;
+        position: relative;
+        color: $whitebg;
+
+        .logo{ width: 80px;}
+        .wrap{
+            width: 100%;
+            padding: 30px 0;
+            padding-bottom: 100px;
+            // border: 1px solid red;
+
+            &::after{
+                content: '';
+                display: block;
+                clear: both;
+            }            
+            article{
+                float: left;
+                width: 50%;
+                // border: 1px solid red;
+                &:nth-child(1){
+                    h2{
+                        font: normal 30px/1.4 'arial';
+                        margin-bottom: 30px;
+                    }
+                    ul{
+                        li{
+                            font: normal 14px/1 'arial';
+                            padding: 5px 0;
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    ul{
+                        float: left;
+                        margin-right: 100px;
+                        h3{
+                            font: normal 16px/1 'arial';
+                            color: #565656;
+                            margin-bottom: 20px;
+                        }
+                        li{
+                            font: normal 14px/1 'arial';
+                            padding: 10px 0;
+                        }
+                    }
+                }
+            }            
+        }
+
+        .copyright{
+            padding: 20px 0;
+            position: relative;
+
+            &::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            span{
+                font: 14px/1 'arial';
+                letter-spacing: 1px;
+            }
+            .terms{
+                position: absolute;
+                left: 50%; top: 50%;
+                transform: translate(-50%, -50%);
+                li{
+                    float: left;
+                    font: 14px/1 arial;
+                    padding: 0 20px;
+                }
+            }
+            .sns{
+                float: right;
+                li{
+                    float: left;
+                    padding-left: 40px;
+
+                    svg{font-size: 20px;}
+                }
+            }
         }
     }
 }
