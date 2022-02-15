@@ -126,13 +126,17 @@ export default function Join(){
     useEffect(()=>{
         main.current.classList.add('on');
     })
+    const path = process.env.PUBLIC_URL;
     return(
+        
         <main className="content join" ref={main}>
             <figure className="subvisual">
             
             </figure>
-            <div className="inner">
-                <h1>join</h1>
+            <div className="back">
+                <img src={path+'/img/joinback.png'}/>
+            </div>
+            <div className="inner">       
                 <section>
                     { success ? <div className="success">회원가입을 축하합니다.</div> : null}
                     {/* submit 제출 시 handleSubmit 함수 호출 */}
@@ -152,7 +156,7 @@ export default function Join(){
                                                 type="text"
                                                 id="userId"
                                                 name="userId"
-                                                placeholder="아이디를 입력하세요."
+                                                placeholder="5글자 이상입력하세요."
                                                 //화면에 입력하는 값을 변수로 설정
                                                 value={val.userId}
                                                 // onChange 추가해줘야 입력값을 리액트에서 읽기가능하다.
@@ -171,7 +175,7 @@ export default function Join(){
                                                 type="password" 
                                                 name="pwd" 
                                                 id="pwd"
-                                                placeholder="비밀번호를 입력하세요."
+                                                placeholder="영어 대,소문자 "
                                                 value={val.pwd}
                                                 onChange={handleChange}
                                             />

@@ -1,4 +1,13 @@
 .join{
+    .back{
+        width: 100vh;
+        z-index: -1;
+        opacity: .7;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        img{ width: 100%; }
+    }
     .inner{
         padding: 100px 0;
         section{
@@ -7,31 +16,35 @@
                 width: 100%;
                 padding: 20px;
                 font: bold 16px/1 'doodle';
-                color: orange;
+                color: $onblackbg;
             }
             form{
                 width: 100%;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 50px;
                 fieldset{
                     width: 100%;
                     table{
                         width: 100%;
-                        border-top: 1px solid #ddd; 
-                        border-bottom: 1px solid #ddd; 
+                        border-top: 1px solid $elite; 
                         border-collapse: separate;                       
                         tbody{
                             tr{
                                 position: relative;
-                                padding: 20px 0;
+                                padding: 25px 0;
                                 margin-bottom: 10px;
                                 
                                 // 공통 레이아웃
-                                th, td{ padding: 20px 30px;}
+                                th, td{ 
+                                    padding: 30px 30px;
+                                    border-bottom: 1px solid $elite;
+                                }
 
                                 // th L/O
                                 th{ 
                                     width: 10%;
                                     text-align: left;
-                                    background: rgba(255, 166, 0, 0.3);
+                                    color: $wolrd;
 
                                     &.btnSet{ 
                                         width: 100%;
@@ -40,13 +53,13 @@
                                         padding: 30px 0;
 
                                         input[type=reset], input[type=submit]{
-                                            width: 150px;
-                                            height: 30px;
+                                            width: 120px;
+                                            height: 40px;
                                             margin: 0 50px;
-                                            background: orange;
+                                            background: $onblackbg;
                                             border: none;
                                             color: #fff;
-                                            font: 12px/30px 'arial';
+                                            font: 14px/30px 'arial';
                                             letter-spacing: 2px;
                                             cursor: pointer;
                                             transition: .5s;
@@ -89,10 +102,10 @@
 
                                     .err{
                                         font: normal 11px/1 'arial';
-                                        color: red;
+                                        color: $red;
                                         position: absolute;
                                         left: 35px;
-                                        bottom: 5px;
+                                        bottom: 10px;
                                     }                                    
                                 }
                             }

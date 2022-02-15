@@ -3,6 +3,18 @@
     height: 80vh;
     padding: 100px 0;
     position: relative;
+    overflow: hidden;
+
+    .back1{
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: #f79f1b;
+        z-index: -1;
+        position: absolute;
+        left: -200px;
+        bottom: -300px;
+    }
     
     &::after{
         content: '';
@@ -24,9 +36,9 @@
 
         .btns{
             // border: 1px solid red;
-            width: 80px;
+            width: 100px;
             position: absolute;
-            bottom: 0px;
+            bottom: 20px;
             left: 50%;
 
             li{
@@ -36,7 +48,7 @@
                 background: transparent;
                 border-radius: 50%;
                 border: 3px solid #787878;
-                margin: 0 5px;
+                margin: 0 8px;
                 box-sizing: border-box;
                 cursor: pointer;
                 
@@ -51,6 +63,10 @@
             display: block;
             clear: both;
         }
+        
+        .resource{
+            display: none;
+        }
 
         article{
             width: 100%;
@@ -58,8 +74,6 @@
             position: relative;
             //border: 1px solid red;
             float: left;
-            
-
 
             .txt{
                 width: 60%;

@@ -4,6 +4,7 @@ export default function Intro(){
     const path = process.env.PUBLIC_URL;
     return(
         <section id="intro">
+            <div className="back1"></div>
             <div className="inner">
                 <main>
 
