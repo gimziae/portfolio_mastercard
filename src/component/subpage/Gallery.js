@@ -23,7 +23,7 @@ export default function Gallery(){
             url = `https://www.flickr.com/services/rest/?method=${methoud1}&api_key=${api}&per_page=${num}&format=json&nojsoncallback=1`;
         }
         if(opt.type === 'search'){
-            url = `https://www.flickr.com/services/rest/?method=${methoud2}&api_key=${api}&per_page=${num}&tags=${opt.tag}&format=json&nojsoncallback=1`;
+            url = `https://www.flickr.com/services/rest/?method=${methoud2}&api_key=${api}&per_page=${num}&tags=${opt.tags}&format=json&nojsoncallback=1`;
         }
 
         await axios
