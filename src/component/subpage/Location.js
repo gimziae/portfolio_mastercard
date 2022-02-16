@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faEnvelopeOpen, faLocationDot, faMap, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default function Location(){
     let main = useRef(null);
@@ -7,29 +9,39 @@ export default function Location(){
     const [map, setMap] = useState(null); //지도 생성 참조
     const [index, setIndex] = useState(0); //순서값 참조
     const path = process.env.PUBLIC_URL; //퍼블릭 폴더 절대경로(이미지 참조)
-
+    const branch_info = document.querySelectorAll(".branch_info article");
     // 3. kakao 마커 위치정보 및 이미지
     const info =[ 
         {
             title:"본점", 
-            latlng : new kakao.maps.LatLng(37.266444, 126.9972137),
+            latlng : new kakao.maps.LatLng(37.5683731,126.9760812),
             imgSrc : path+'/img/marker.png', 
             imgSize : new kakao.maps.Size(100,100), 
             imgPos : {offset: new kakao.maps.Point(116, 99)},
+            tel : '+82(02)123-4557',
+            address : '서울 중구 세종대로 136 16층',
+            email : 'master_seoul@mastercard.com'
+            
         },
         {
             title:"지점1", 
-            latlng : new kakao.maps.LatLng(33.450701, 126.570667),
+            latlng : new kakao.maps.LatLng(37.262388,127.0304966),
             imgSrc : path+'/img/marker.png',  
             imgSize : new kakao.maps.Size(100,100), 
             imgPos : {offset: new kakao.maps.Point(116, 99)},
+            tel : '+82(031)234-5678',
+            address : '경기 수원시 팔달구 권광로 170',
+            email : 'master_suwon@mastercard.com'
         },
         {
             title:"지점2", 
-            latlng : new kakao.maps.LatLng(37.557527,126.9222836),
+            latlng : new kakao.maps.LatLng(37.4930506,126.7220412),
             imgSrc : path+'/img/marker.png', 
             imgSize : new kakao.maps.Size(100,100), 
             imgPos : {offset: new kakao.maps.Point(116, 99)}, 
+            tel : '+82(032)987-6554',
+            address : '인천 부평구 부평대로 20번길 18-1 1층',
+            email : 'master_incheon@mastercard.com'
         }
     ]; 
 
@@ -83,42 +95,93 @@ export default function Location(){
          // 해당 컴포넌트가 재 랜더링 될 때 마다 기존 window 객체에 등록된 함수를 다시 제거
         return ()=> window.removeEventListener("resize", mapSet);
     },[index]);
-
+    const active = {color: '#ffb850'};
     return(
+        
         <main className="content location" ref={main}>
             <figure className="subvisual">
             
             </figure>
             <div className="inner">
-                <h1>location</h1>
                 <section>
+                    {/* 메세지 */}
+                    <div className="contact">
+                        <h2><FontAwesomeIcon icon={faEnvelopeOpen} /> <br /> SEND US A MESSAGE</h2>
+                        <textarea id="comment" cols="30" rows="10" placeholder="What's i your mind..."></textarea>
+                        <div className="con">
+                            
+                            <input type="text" id="name" placeholder="Name"/>
+                            <input type="email" id="email" placeholder="Emali"/>
+
+                            <input type="submit" value="SEND NOW" />
+                        </div>
+                    </div>
                     {/* 지점 설정 버튼 */}
-                    <nav className="branch">
-                        {mapInfo.map((data, index)=>{
-                            return(
-                               <button key={index} onClick={()=>{
-                                   setIndex(index)}}>{data.title}</button>  
-                            )
-                        })}
-                    </nav>    
-                    <nav className="traffic">
-                        <button onClick={()=>{
-                            map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-                        }}>교통정보 보기</button>
-                        <button onClick={()=>{
-                            map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-                        }}>교통정보 끄기</button>
-                    </nav>
+                    <div className="btns">
+                        
+                        <h2><FontAwesomeIcon icon={faMap} /> <br /> LOCATION</h2>
+                        <nav className="branch">
+                            {mapInfo.map((data, index)=>{
+                                return(
+                                <button   key={index} onClick={()=>{ 
+                                    setIndex(index)
+                                    for(let i=0; i<mapInfo.length; i++){
+                                        branch_info[i].classList.remove('on');
+                                    }
+                                    branch_info[index].classList.add('on');
+                                }}>{data.title}</button>  
+                                )
+                            })}
+                        </nav>     
+                        {/* 교통정보 */}
+                        <nav className="traffic">
+                            <button onClick={()=>{
+                                map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+                            }}>교통정보 보기</button>
+                            <button onClick={()=>{
+                                map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+                            }}>교통정보 끄기</button>
+                        </nav>                         
+                    </div>
+                    {/* 지도 */}
+                    <div className="wrap">
+                        <div className="branch_info">
+                            <article className="on">
+                                <h3>{info[0].title}</h3>
+                                <address>
+                                    <FontAwesomeIcon icon={faLocationDot} />
+                                    {info[0].address}
+                                </address> 
+                                <span>
+                                    <FontAwesomeIcon icon={faPhone} />
+                                    {info[0].tel}
+                                </span>
+                                <p>
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                    {info[0].email}
+                                </p>             
+                            </article>
+                            <article>
+                                <h3>{info[1].title}</h3>
+                                <address>{info[1].address}</address>  
+                                <span>{info[1].tel}</span>
+                                                          
+                            </article>
+                            <article>
+                                <h3>{info[2].title}</h3>
+                                <address>{info[2].address}</address> 
+                                <span>{info[2].tel}</span>
+                                                           
+                            </article>
+                        </div>
+                        <div id="map" ref={container}></div>
+                    </div>
 
-                    {/* 맵이 들어갈 공간 */}
-                    <div id="map" ref={container}></div>
 
-                    {/* 교통정보 버튼 */}
-
-
-                    
                 </section>
             </div>
+            
+
         </main>
     )
 }

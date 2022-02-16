@@ -1,51 +1,217 @@
 .location{
     .inner{
-        >section{
-            padding-top: 30px;
-            &::after{
-                content: '';
-                display: block;
-                clear: both;
-            }
-            .branch{
-                width: 50%;
-                padding: 10px;
-                float: left;
-                text-align: left;
-                margin-bottom: 5px;
-                button{
-                    width: 100px;
-                    height: 40px;
-                    background: oldlace;
-                    font: normal 14px/40px '맑은 고딕';
-                    cursor: pointer;
-                    color: #555;
-                    border-radius: 40px;
+        width: 100%;
+        padding-top: 50px;
+        >section{         
+            .contact{
+                width: 1180px;
+                margin: 0 auto;
+                position: relative;
+                padding-top: 20px;
+                padding-bottom: 80px;
+                margin-bottom: 80px;
+
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 1180px;
+                    height: 1px;
+                    background: $elite;
+                    position: absolute;
+                    bottom: 0px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                svg{
+                    // border: 1px solid red;
+                     font-size: 40px;
+                     color: $onblackbg;
+                     display: inline-block;
+                     left: 50%;
+                     margin-bottom: 30px;
+                 }
+                h2{
+                    font: normal 25px/1 'arial';
+                    color: $whitebg;
+                    margin-bottom: 50px;
+                    text-align: center;
+                }
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                } 
+                textarea{
+                    width: 50%;
+                    resize: none;
+                    margin-bottom: 20px;
+                    float: left;
+                    background: $whitebg;
+                    padding: 10px;
+                }
+                .con{
+                    width: 45%;
+                    color: $whitebg;
+                    float: right;
                     margin-right: 20px;
+                    position: relative;
+                    input[type=text],input[type=email]{
+                        width: calc((100% - 20px));
+                        padding: 10px 20px;
+                        margin-bottom: 20px;
+                        background: $whitebg;
+                    }
+
+                    input[type=submit]{
+                        width: 120px;
+                        height: 30px;
+                        margin-top: 20px;
+                        display: inline-block;
+                        text-align: center;
+                        font: 12px/30px 'arial';
+                        background: $onblackbg;
+                        border: none;
+                        cursor: pointer;
+                        color: $elite;
+                    }
                 }
             }
-            .traffic{
-                width: 50%;
-                padding: 10px;
-                float: right;
-                text-align: right;
-                button{
-                    width: 150px;
-                    height: 40px;
-                    background: oldlace;
-                    font: normal 14px/40px '맑은 고딕';
-                    cursor: pointer;
-                    color: #555;
-                    border-radius: 40px;
-                    margin-left: 20px;
+            .btns{   
+                width: 1180px;
+                margin: 0 auto;
+                position: relative;
+
+                svg{
+                   // border: 1px solid red;
+                    font-size: 40px;
+                    color: $onblackbg;
+                    display: inline-block;
+                    left: 50%;
+                    margin-bottom: 30px;
                 }
+                h2{
+                    font: normal 25px/1 'arial';
+                    color: $whitebg;
+                    text-align: center;
+                    margin-bottom: 30px;
+                }
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                } 
+                .branch{
+                    float: right;
+                    padding: 10px 20px;
+
+                    button{
+                        float: left;
+                        height: 30px;
+                        background: transparent;
+                        font: normal 14px/20px '맑은 고딕';
+                        cursor: pointer;
+                        color: $whitebg;
+                        border: none;
+                        margin: 0 30px;
+
+                        &:hover{
+                            color: $onblackbg;
+                        }
+                    }
+                }
+                .traffic{
+                    float: left;
+                    padding: 10px 20px;
+                    button{
+                        height: 30px;
+                        background: transparent;
+                        font: normal 14px/1 '맑은 고딕';
+                        cursor: pointer;
+                        color: $whitebg;
+                        border: none;
+                        margin: 0 15px;
+
+                        &:hover{
+                            color: $onblackbg;
+                        }
+                    }
+                }                 
             }
-            #map{
+ 
+            .wrap{
                 width: 100%;
                 height: 500px;
-                background: #000;
-            }
+                position: relative;
             
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                } 
+                .branch_info{
+                    width: 400px;
+                    height: 60%;
+                    padding: 50px;
+                    background: $whitebg;
+                    opacity: .95;
+                    float: left;
+                    position: absolute;
+                    top: calc((600px * .4)/2);
+                    left: 60%;
+                    z-index: 2;
+                    article{
+                        position: absolute;
+                        display: none;
+                        width: 100%;
+                        height: 100%;
+                        &.on{
+                            display: block;
+                        }
+                        h3{
+                            font: bold 20px/1 'arial';
+                            //text-align: center;
+                            color: $elite;
+                            margin-bottom: 20px;
+                        }
+                        address, span, p{
+                            font: 14px/1 'arial';
+                            color: $elite;
+                            padding: 10px;
+                            svg{
+                                color: $onblackbg;
+                                font-size: 16px;
+                                margin-right: 10px;
+                            }
+                            
+                        }
+                        span{
+                            font: 14px/1 'arial';
+                            color: $elite;
+                            svg{
+                                color: $onblackbg;
+                                font-size: 16px;
+                                margin-right: 10px;
+                            }
+                        }
+                        p{
+                            font: 14px/1 'arial';
+                            color: $elite;
+                            svg{
+                                color: $onblackbg;
+                                font-size: 16px;
+                                margin-right: 10px;
+                            }
+                        }
+
+                    }
+                }
+                #map{
+                    width: 100%;
+                    height: 100%;
+                    filter: grayscale(.2);
+                }                
+            }
+
         }
     }
 }

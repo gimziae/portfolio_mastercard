@@ -6,7 +6,7 @@ header{
         height: 100%;
         margin: 0 auto;
         position: relative;
-        border-bottom: 1px solid transparent;
+        border-bottom: 1px solid $elite;
 
         &::after{
             content: '';
