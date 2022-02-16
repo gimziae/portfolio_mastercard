@@ -1,12 +1,22 @@
+import { useEffect, useRef } from "react";
+
 export default function Visual(){
     const path = process.env.PUBLIC_URL;
+
+    const title = useRef(null);
+    const sub_tit = useRef(null);
+    useEffect(()=>{
+        title.current.classList.add('on');
+        sub_tit.current.classList.add('on');
+    },[])
+
     return(
         <section id="visual">
             <div className="inner">
                 <main>
                     <p className="welcome">WELCOME TO MASTERCARD</p>
                     <div className="txt">
-                        <article className="mainTitle">
+                        <article className="mainTitle" ref={title}>
                             <h1>
                                 EXPERIENCE <br />
                                 THE WORLD WITH <br />
@@ -14,7 +24,7 @@ export default function Visual(){
                                 <span>MASTERCARD</span>
                             </h1>
                         </article>
-                        <article className="subTitle">
+                        <article className="subTitle" ref={sub_tit}>
                             <p>
                                 We owrd to connect an inclusive digital <br />
                                 economy by making transactions <br />

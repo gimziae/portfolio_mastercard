@@ -5,29 +5,35 @@
     position: relative;
     overflow: hidden;
 
-    .back1{
-        width: 700px;
-        height: 700px;
-        border-radius: 50%;
-        background: #f79f1b;
-        z-index: -1;
-        position: absolute;
-        left: -200px;
-        bottom: -300px;
-    }
-    
-    &::after{
+    &::before{
         content: '';
         display: block;
         width: 1180px;
         height: 1px;
         background: $elite;
         position: absolute;
-        bottom: 0;
+        top: 0px;
         left: 50%;
         transform: translateX(-50%);
     }
 
+    .back1{
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: #f79f1bd2;
+        z-index: -1;
+        position: absolute;
+        left: -400px;
+        bottom: -500px;
+        transition: 1s;
+        
+        &.on{
+            left: -200px;
+            bottom: -300px;
+        }
+    }
+    
     .inner{
         width: 1180px;
         height: 100%;

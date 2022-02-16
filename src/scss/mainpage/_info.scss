@@ -4,14 +4,14 @@
     padding: 100px 0;
     position: relative;
     
-    &::after{
+    &::before{
         content: '';
         display: block;
         width: 1180px;
         height: 1px;
         background: $elite;
         position: absolute;
-        bottom: 0;
+        top: 0px;
         left: 50%;
         transform: translateX(-50%);
     }

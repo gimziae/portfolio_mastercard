@@ -1,10 +1,23 @@
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { useRef } from "react/cjs/react.development";
 
 export default function Intro(){
     const path = process.env.PUBLIC_URL;
+    const back = useRef(null);
+
+    // useEffect(()=>{
+    //     let scrollY = window.scrollY;
+    //     console.log(scrollY);
+    //     if(scrollY >= 300){
+    //         back.currnet.classList.add('on');
+    //     }
+    // })
+
+
     return(
         <section id="intro">
-            <div className="back1"></div>
+            <div className="back1" ref={back}></div>
             <div className="inner">
                 <main>
 

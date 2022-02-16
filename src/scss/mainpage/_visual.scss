@@ -5,18 +5,6 @@
     padding-top: 130px;
     position: relative;
 
-    &::after{
-        content: '';
-        display: block;
-        width: 1180px;
-        height: 1px;
-        background: $elite;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     .inner{
         width: 1180px;
         height: 100%;
@@ -47,6 +35,14 @@
                 .mainTitle{
                     width: 65%;
                     float: left;
+                    opacity: 0;
+                    transform: translateX(50px);
+                    transition: 2s;
+                    &.on{
+                        transform: translateX(0px);
+                        opacity: 1;
+                    }
+
                     h1{
                         font: normal 60px/1.2 'arial';
                         color: $standard;
@@ -64,7 +60,14 @@
                     position: absolute;
                     bottom: 0;
                     right: 0;
-                    // border: 1px solid red;
+                    opacity: 0;
+                    transform: translateY(-10px);
+                    transition: 1s .5s;
+                    &.on{
+                        transform: translateY(0px);
+                        opacity: 1;
+                    }
+
                     p{
                         font: normal 16px/1.4 'arial';
                         color: #999;
