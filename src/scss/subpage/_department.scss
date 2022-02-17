@@ -1,0 +1,33 @@
+.department{
+    .inner{
+        section{
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+
+            .members{
+                width: 100%;
+                border: 1px solid red;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+                article{
+                    float: left;
+                    width: 30%;
+                    margin-right: 3%;
+                    border: 1px solid red;
+                    .pic{
+                        width: 100%;
+                        img{
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

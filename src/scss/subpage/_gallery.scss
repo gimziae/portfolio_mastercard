@@ -1,22 +1,37 @@
 .gallery{
     .inner{
-        position: relative;
-        >h1{
-            font: 30px/1 'arial';
-            color: $standard;
-            margin-bottom: 20px;
-            padding: 0;
-            cursor: pointer;
+        position: relative;    
+        >article{
+            width: 100%;
+            height: auto;
+            padding: 50px 0;
+            border: 1px solid red;
+        }    
+        svg{
+            // border: 1px solid red;
+             font-size: 40px;
+             color: $onblackbg;
+             display: inline-block;
+             left: 50%;
+             margin-bottom: 30px;
+         }
+        
+        h2{
+            font: normal 25px/1 'arial';
+            color: $whitebg;
+            margin-bottom: 50px;
+            text-align: center;
         }
 
-        #search{
+        //검색박스
+        >.search{
             border: 1px solid red;
             width: 100%;
             padding: 20px 0;
             margin: 0 auto;
             text-align: center;
             .searchBox{
-                width: 250px;
+                width: 300px;
                 height: 30px;
                 padding: 10px;
             }
@@ -31,15 +46,15 @@
                 cursor: pointer;
             }            
         }
-
+        //로딩바
         .loading{
-            border: 10px outset $onblackbg;
+            border: 15px outset $onblackbg;
             width: 150px;
             height: 150px;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%,-20%);
             border-radius: 50%;
             animation: loading 2s linear infinite;    
 
@@ -50,8 +65,7 @@
                 display: block;
             }            
         }
-        
-        section{
+        #imgs{
             width: 100%;
 
             &::after{
@@ -60,34 +74,70 @@
                 clear: both;
             }
             .item{
-                border: 1px solid red;
+               // border: 1px solid red;
                 width: 20%;
                 float: left;
-                padding: 20px;
+                padding: 10px;
 
                 .wrap{
                     width: 100%;
                   //  height: 100%;
                     .pic{
                         width: 100%;
-                        border: 1px solid red;
+                        cursor: pointer;
+                       // border: 1px solid red;
                         overflow: hidden;
                         .img{
                             width: 100%;
+                            height: 100%;
                             object-fit: cover;
                         }
                     }
                     .txt{
-                        border: 1px solid red;
+                        display: none;
+                       // border: 1px solid red;
                         width: 100%; 
                         color: $standard;
+                        h3{
+                            font: 16px/1.2 'arial';
+                            word-break: break-all;
+                        }
                     }
                 }
             }
         }
     }
 }
+.popup{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0; left: 0;
+    padding: 5vw;
+    transition: ease-in-out;
 
+    h1{
+        font: 20px/1 'arial';
+        color: #fff;
+        text-indent: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    span{
+        font: bold 16px/1 'arial';
+        color: #fff;
+        position: absolute;
+        top: 6vh; right: 5vw;
+        cursor: pointer;
+    }
+}
 @keyframes loading {
     0% { transform: translate(-50%,-50%) rotate(0deg); }
     50%{ border-width: 0px; }

@@ -3,6 +3,7 @@ import Intro from './Intro';
 import Visual from './Visual';
 import News from './News';
 import Info from "./Info";
+import Btns from "./Btns";
 
 export default function Main(){
     return(
@@ -11,7 +12,8 @@ export default function Main(){
             <Visual />
             <Intro />
             <Info />
-            <News />        
+            <News />   
+            <Btns />     
         </>
     )
 }

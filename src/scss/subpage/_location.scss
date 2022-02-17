@@ -29,7 +29,7 @@
                      display: inline-block;
                      left: 50%;
                      margin-bottom: 30px;
-                 }
+                }
                 h2{
                     font: normal 25px/1 'arial';
                     color: $whitebg;
@@ -114,7 +114,7 @@
                         border: none;
                         margin: 0 30px;
 
-                        &:hover{
+                        &:hover, &.on{
                             color: $onblackbg;
                         }
                     }
@@ -131,7 +131,7 @@
                         border: none;
                         margin: 0 15px;
 
-                        &:hover{
+                        &:hover, &.on{
                             color: $onblackbg;
                         }
                     }

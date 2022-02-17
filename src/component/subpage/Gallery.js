@@ -1,16 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Masonry from 'react-masonry-component';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImages } from "@fortawesome/free-solid-svg-icons";
 
+// redux
+import { useSelector,useDispatch } from "react-redux";
+import { setFlickr } from "../../redux/action";
 
 export default function Gallery(){
     const main = useRef(null);
     const frame = useRef(null);
     const input = useRef(null); // input값 참조
     const [items, setItems] = useState([]);
-    // const [index, setIndex] = useState(0); 
+    const [index, setIndex] = useState(0); 
     const [loading, setLoading] = useState(true);
     const [enableClick, setEnableClick] = useState(true);
+    const [pop, setPop] = useState(false);
+
+    // redux
+    const picData = useSelector(state=>state.flickrReducer.flickr);
+    const dispatch = useDispatch();
 
     // flickr 
     const getFlickr = async opt=>{
@@ -82,8 +92,9 @@ export default function Gallery(){
                 tags: result
             }); 
             //^getFlickr 내부에 enableClick(true) 마지막에 실행해 원래 값으로 돌려주다      
-            input.current.value='';                   
+            
         }    
+       // input.current.value='';                   
     }
 
     // flickr search(url2)호출 함수
@@ -91,7 +102,7 @@ export default function Gallery(){
         if(e.key !== 'Enter') return;
         // 검색결과가 없을 시 추가
         let result = input.current.value;
-        input.current.value='';
+      //  input.current.value='';
 
         if(result === ''){
             alert('검색어를 입력하세요.');
@@ -108,7 +119,8 @@ export default function Gallery(){
                 tags: result
             }); 
             //^getFlickr 내부에 enableClick(true) 마지막에 실행해 원래 값으로 돌려주다                         
-        }    
+        } 
+        result = '';   
     }
 
       
@@ -121,38 +133,56 @@ export default function Gallery(){
     },[]);
 
     return(
+        <>
         <main className="content gallery" ref={main}>
             <figure className="subvisual">
             
             </figure>
             <div className="inner">
-                <h1 onClick={showInterest}>제목</h1>
-                <div id="search">
+                {/* visual */}
+                <article></article>
+
+
+                {/* 제목 클릭 시 flickr interest 동작 */}
+                <h2 onClick={showInterest}><FontAwesomeIcon icon={faImages} /> <br /> GALLERY</h2>
+
+                {/* 검색기능 */}
+                <div className="search">
                     <input 
                         type="text" 
                         className="searchBox" 
                         placeholder="검색어를 입력하세요."
-                        ref={input}
+                        ref={input} 
                         onKeyUp={showSearchEnter}/>
                     <button className="searchBtn" onClick={showSearch}>SEARCH</button>
                 </div>
-
+                {/* 로딩바 */}
                 {loading ? <div className="loading"><span>LOADING</span></div> : null}
-                <section ref={frame}>
+                <section id="imgs" ref={frame}>
+                    {/* flickr api 호출 */}
                     <Masonry 
                         elementType={'div'}
                         options={masonryOptions}
                     >
                     {items.map((item, index)=>{
+                        let title = item.title;
+                        let title_len = title.length;
                         return(
                             <article key={index} className='item'>
                                 <div className='wrap'>
                                     {/* pic에다가 클릭 이벤트 걸어주기 'onClick' */}
-                                    <div className='pic' data={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}>
+                                    <div
+                                        className='pic' 
+                                        onClick={()=>{
+                                            setPop(true);
+                                            setIndex(index);
+                                        }}
+                                        data={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
+                                    >
                                         <img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} />
                                     </div>
                                     <div className="txt">
-                                        <h3>{item.title}</h3>
+                                        <h3>{ title_len > 20 ? title.substr(0,40) + '...' : title }</h3>
                                     </div>        
                                 </div>
                     
@@ -163,5 +193,23 @@ export default function Gallery(){
                 </section>
             </div>
         </main>
+
+        { pop ? <Popup/> : null}
+        </>
     )
+    function Popup(){
+        useEffect(()=>{
+            document.body.style.overflow = 'hidden';
+            return ()=> document.body.style.overflow = 'auto';
+        })
+        return(
+            <aside className='popup'>
+                <h1>{items[index].title}</h1>
+                <img src={`https://live.staticflickr.com/${items[index].server}/${items[index].id}_${items[index].secret}_b.jpg`} />
+                <span onClick={()=>{
+                    setPop(false);
+                }}>close</span>
+            </aside>
+        )
+    }
 }

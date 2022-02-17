@@ -10,6 +10,10 @@ export default function Location(){
     const [index, setIndex] = useState(0); //순서값 참조
     const path = process.env.PUBLIC_URL; //퍼블릭 폴더 절대경로(이미지 참조)
     const branch_info = document.querySelectorAll(".branch_info article");
+    const branch_btns = document.querySelectorAll(".branch button");
+    const traffic_btns = document.querySelectorAll(".traffic button");
+    console.log(traffic_btns);
+    console.log(branch_btns[0]);
     // 3. kakao 마커 위치정보 및 이미지
     const info =[ 
         {
@@ -94,8 +98,8 @@ export default function Location(){
 
          // 해당 컴포넌트가 재 랜더링 될 때 마다 기존 window 객체에 등록된 함수를 다시 제거
         return ()=> window.removeEventListener("resize", mapSet);
-    },[index]);
-    const active = {color: '#ffb850'};
+    }, [index]);
+
     return(
         
         <main className="content location" ref={main}>
@@ -127,8 +131,11 @@ export default function Location(){
                                     setIndex(index)
                                     for(let i=0; i<mapInfo.length; i++){
                                         branch_info[i].classList.remove('on');
+                                        branch_btns[i].classList.remove('on');
                                     }
                                     branch_info[index].classList.add('on');
+                                    branch_btns[index].classList.add('on');
+                                    console.log(index);
                                 }}>{data.title}</button>  
                                 )
                             })}
@@ -137,9 +144,17 @@ export default function Location(){
                         <nav className="traffic">
                             <button onClick={()=>{
                                 map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+                                for(let i=0;i<traffic_btns.length;i++){
+                                    traffic_btns[i].classList.remove('on');
+                                }
+                                traffic_btns[0].classList.add('on');
                             }}>교통정보 보기</button>
                             <button onClick={()=>{
                                 map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+                                for(let i=0;i<traffic_btns.length;i++){
+                                    traffic_btns[i].classList.remove('on');
+                                }
+                                traffic_btns[1].classList.add('on');
                             }}>교통정보 끄기</button>
                         </nav>                         
                     </div>
