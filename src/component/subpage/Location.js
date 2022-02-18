@@ -71,6 +71,20 @@ export default function Location(){
         const map = new kakao.maps.Map(container.current, options);
         setMap(map);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // 4. 마커 생성하는 코드 (const index값 참조)
         new kakao.maps.Marker({
             map: map,
@@ -96,7 +110,9 @@ export default function Location(){
         map.setZoomable(true);
         map.setDraggable(true);
 
-         // 해당 컴포넌트가 재 랜더링 될 때 마다 기존 window 객체에 등록된 함수를 다시 제거
+        
+
+        // 해당 컴포넌트가 재 랜더링 될 때 마다 기존 window 객체에 등록된 함수를 다시 제거
         return ()=> window.removeEventListener("resize", mapSet);
     }, [index]);
 
@@ -104,7 +120,7 @@ export default function Location(){
         
         <main className="content location" ref={main}>
             <figure className="subvisual">
-            
+                <img src={path+'/img/location_sub.jpeg'} />              
             </figure>
             <div className="inner">
                 <section>

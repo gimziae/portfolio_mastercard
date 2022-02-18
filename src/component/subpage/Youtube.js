@@ -37,7 +37,7 @@ export default function Youtube(){
     return(
         <main className="content youtube" ref={main}>
             <figure className="subvisual">
-            
+                <img src={path+'/img/youtube_sub.jpeg'} />
             </figure>
             <div className="inner">
                 <section>

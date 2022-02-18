@@ -132,15 +132,18 @@ export default function Gallery(){
         });
     },[]);
 
+    const path = process.env.PUBLIC_URL;
     return(
         <>
         <main className="content gallery" ref={main}>
             <figure className="subvisual">
-            
+                <img src={path+'/img/gallery_sub.jpeg'} />
             </figure>
             <div className="inner">
                 {/* visual */}
-                <article></article>
+                <article>
+
+                </article>
 
 
                 {/* 제목 클릭 시 flickr interest 동작 */}

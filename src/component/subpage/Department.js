@@ -20,11 +20,26 @@ export default function Department(){
     return(
         <main className="content department" ref={main}>
             <figure className="subvisual">
-            
+                <img src={path+'/img/department_sub.jpeg'} />
+                <div className="con">
+                    <h1>Creating limitless<br />possibilities for everyone</h1>                    
+                </div>
             </figure>
             <div className="inner">
-                <h1>department</h1>
                 <section>
+                    <article className="welcome">
+                        <div className="txt">
+                            <p>
+                                Our journey toward equity and inclusion should never end. There will always be more for us to understand and do. But we progress in the right direction every day that we choose to bring our decency to the forefront of every interaction, to listen to people, to see them for who they are and what they need, to find ways to level the playing fields and build pathways to opportunity for everyone.
+                                <br /><br />
+                                <span>- Joshep, CEO</span>
+                            </p>
+                            
+                        </div>
+                        <div className="pic">
+                            <img src={path+'/img/welcome.jpeg'} />
+                        </div>
+                    </article>
                     <div className="members">
                         {members.map((data,idx)=>{
                             return(

@@ -1,12 +1,33 @@
 .content{
     width: 100%;
     position: relative;
+    background: #ffffff;
+
     .subvisual{
         width: 100%;
-        height: 200px;
-        background: #ffb950ab;
-        opacity: 0;
+        height: 45vh;
+        position: relative;
+        background: #000;
         transition: 1s;
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+        >.con{
+            border: 1px solid red;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            // left: 50%;
+            h1{
+                font: normal 40px/1.5 $subfont;
+                letter-spacing: 2px;
+                color: $standard;
+            }
+        }
     }
     .inner{
         width: 1180px;

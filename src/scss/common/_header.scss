@@ -71,7 +71,7 @@ header{
                 float: left;
                 a,svg{
                     display: inline-block;
-                    padding: 20px;
+                    padding: 16px 20px;
                     color: $standard;
                     font-size: 14px;
                     transition: .5s;
@@ -91,6 +91,10 @@ header{
         top: 0;
         left: 0;
         z-index: 5;
+    }
+    &.sub{
+        background: #111;
+        .inner{border-color: #111;}
     }
 }
 

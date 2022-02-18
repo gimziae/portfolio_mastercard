@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Community(){
     let main = useRef(null);
+    const path = process.env.PUBLIC_URL;
     const input = useRef(null); //inputBox의 input에 입력되는 값 useRef
     const textarea = useRef(null); //inputBox의 textarea에 입력되는 값 useRef
 
@@ -124,7 +125,7 @@ export default function Community(){
     return(
         <main className="content community" ref={main}>
             <figure className="subvisual">
-
+                <img src={path+'/img/community_sub.jpeg'} />
             </figure>
             <div className="inner">
                 <h1>community</h1>

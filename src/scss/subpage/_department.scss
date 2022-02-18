@@ -1,9 +1,44 @@
 .department{
     .inner{
+        padding-top: 50px;
         section{
             width: 100%;
             margin: 0 auto;
             position: relative;
+            .welcome{
+                width: 100%;
+                position: relative;
+                margin-bottom: 80px;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+                .txt{
+                    width: 60%;
+                    float: left;
+                    padding: 70px 40px 40px 0;
+
+                    p{
+                        font: normal 20px/1.5 '$subfont';
+                        letter-spacing: 1px;
+                        color: $elite;
+                        border-left: 8px solid $onblackbg;
+                        padding-left: 40px;
+                        span{ font-size: 18px;}                  
+                    }
+
+                }
+                .pic{
+                    width: 40%;
+                    float: right;
+                    img{
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
 
             .members{
                 width: 100%;

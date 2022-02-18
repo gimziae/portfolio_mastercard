@@ -131,7 +131,7 @@ export default function Join(){
         
         <main className="content join" ref={main}>
             <figure className="subvisual">
-            
+                <img src={path+'/img/join_sub.jpeg'} />
             </figure>
             <div className="back">
                 <img src={path+'/img/joinback.png'}/>
