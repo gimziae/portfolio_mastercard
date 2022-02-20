@@ -1,33 +1,45 @@
 {
     "data" : [
         {
-            "name" :  "Joshep",
-            "position" : "CEO",
-            "pic" : "member1.jpeg"
+            "name" :  "Sean Walker",
+            "position" : "Vice",
+            "pic" : "member1.jpeg",
+            "email" : "walker@gmail.com",
+            "mobile" : "+82 123 4568"
         },
         {
             "name" :  "Crystal",
-            "position" : "Vice",
-            "pic" : "member2.jpeg"
+            "position" : "President",
+            "pic" : "member2.jpeg",
+            "email" : "crystal@gmail.com",
+            "mobile" : "+82 123 4568"
         },
         {
             "name" :  "Tom hardy",
             "position" : "Engineer",
-            "pic" : "member3.jpeg"
+            "pic" : "member3.jpeg",
+            "email" : "t.hardy@gmail.com",
+            "mobile" : "+82 123 4568"
         },
         {
             "name" :  "Jennie",
             "position" : "Marketer",
-            "pic" : "member4.jpeg"
+            "pic" : "member4.jpeg",
+            "email" : "jennie@gmail.com",
+            "mobile" : "+82 123 4568"
         },        {
-            "name" :  "Liam",
+            "name" :  "Liam Fischer",
             "position" : "Designer",
-            "pic" : "member5.jpeg"
+            "pic" : "member5.jpeg",
+            "email" : "liamm@gmail.com",
+            "mobile" : "+82 123 4568"
         },
         {
-            "name" :  "Ava",
+            "name" :  "Ava ",
             "position" : "Developer",
-            "pic" : "member6.jpeg"
+            "pic" : "member6.jpeg",
+            "email" : "eva@gmail.com",
+            "mobile" : "+82 123 4568"
         }
     ]
 }
