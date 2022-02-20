@@ -52,7 +52,7 @@ export default function Gallery(){
     }
 
     const masonryOptions = {
-        fitWidth: false,
+        fitWidth: true,
         gutter: 0,
         itemSelector: '.item',
         transitionDuration: '0.5s'
@@ -138,6 +138,9 @@ export default function Gallery(){
         <main className="content gallery" ref={main}>
             <figure className="subvisual">
                 <img src={path+'/img/gallery_sub.jpeg'} />
+                <div className="con">
+                    <h1>Make every moment <br /> of every day count</h1>
+                </div>
             </figure>
             <div className="inner">
                 {/* visual */}

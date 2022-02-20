@@ -1,13 +1,26 @@
 import { useEffect,useRef,useState } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
 export default function Department(){
     let main = useRef(null);
+    const serve1 = useRef(null);
+    const serve2 = useRef(null);
+    const serve3 = useRef(null);
+    const serve4 = useRef(null);
+    const serve5 = useRef(null);
     const path = process.env.PUBLIC_URL;
     const [members,setMembers] = useState([]); //member 배열을 받기위한 빈 배열
     const url = `${path}/db/department.json`; //department.json 데이타 url
     useEffect(()=>{
         main.current.classList.add("on");
+
+        serve1.current.classList.add("on");
+        serve2.current.classList.add("on");
+        serve3.current.classList.add("on");
+        serve4.current.classList.add("on");
+        serve5.current.classList.add("on");
 
         axios
             .get(url)
@@ -27,6 +40,65 @@ export default function Department(){
             </figure>
             <div className="inner">
                 <section>
+                    <div className="business">
+                        <h2>Who we serve?</h2>  
+                        <article ref={serve1}>
+                            <div className="wrap">
+                                <div className="pic">
+                                    <img src={path+'/img/consumers.png'} />    
+                                </div>
+                                <div className="txt">
+                                    <h3>Consumers</h3>
+                                    <span>Learn more<FontAwesomeIcon icon={faArrowRightLong} /></span>                                
+                                </div>
+                            </div>
+                        </article>  
+                        <article ref={serve2}>
+                            <div className="wrap">
+                                <div className="pic">
+                                <img src={path+'/img/businesses.png'} />
+                                </div>
+                                <div className="txt">
+                                    <h3>Small & <br />medium <br />businesses</h3>
+                                    <span>Learn more<FontAwesomeIcon icon={faArrowRightLong} /></span>
+                                </div>
+                            </div>
+                        </article>  
+                        <article ref={serve3}>
+                            <div className="wrap">
+                                <div className="pic">
+                                    <img src={path+'/img/public.png'} />
+                                </div>
+                                <div className="txt">
+                                    <h3>Governments <br />& public <br />sector</h3>
+                                    <span>Learn more<FontAwesomeIcon icon={faArrowRightLong} /></span>
+                                </div>
+                            </div>
+                        </article>  
+                        <article ref={serve4}>
+                            <div className="wrap">
+                                <div className="pic">
+                                    <img src={path+'/img/enterprises.png'} />
+                                </div>
+                                <div className="txt">
+                                    <h3>Large <br />enterprises</h3>
+                                    <span>Learn more<FontAwesomeIcon icon={faArrowRightLong} /></span>
+                                </div>
+                            </div>
+                        </article>  
+                        <article ref={serve5}>
+                            <div className="wrap">
+                                <div className="pic">
+                                    <img src={path+'/img/banks.png'} />
+                                </div>
+                                <div className="txt">
+                                    <h3>Banks & credit <br />unions</h3>
+                                    <span>Learn more<FontAwesomeIcon icon={faArrowRightLong} /></span>
+                                </div>
+                            </div>
+                        </article>                      
+                    </div>
+
                     <article className="welcome">
                         <div className="txt">
                             <p>
@@ -40,7 +112,9 @@ export default function Department(){
                             <img src={path+'/img/welcome.jpeg'} />
                         </div>
                     </article>
+
                     <div className="members">
+                        <h2>Our Team</h2>
                         {members.map((data,idx)=>{
                             return(
                                 <article key={idx}>
@@ -50,13 +124,18 @@ export default function Department(){
                                     <div className="con">
                                         <h3>{data.name}</h3>
                                         <span>{data.position}</span>
+                                        <p>
+                                            M. {data.mobile} <br />
+                                            E. {data.email}
+                                        </p>
+
+                                        <a href="#">VIEW FULL PROFILE</a>
                                     </div>
 
                                 </article>
                             )
                         })}                        
                     </div>
-
                 </section>
             </div>
         </main>

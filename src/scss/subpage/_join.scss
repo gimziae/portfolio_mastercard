@@ -1,17 +1,76 @@
 .join{
-    .back{
-        width: 900px;
-        z-index: -1;
-        opacity: .7;
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%,-50%);
-        img{ width: 100%; }
+    overflow: hidden;
+    // .subvisual{display: none;}
+    &.on{
+        .subvisual{ opacity: 1}
+        .inner{
+            transform: translate(0, 0) scale(1);
+            opacity: 1;     
+            .title h1{
+                &::before{width: 30%;}
+            }
+        }
+
     }
     .inner{
-        padding: 100px 0;
+        // width: 100%;
+        padding: 0;
+        transform: translate(0, 0) scale(1.02);
+        transition: 1s;
+
+        &::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .title{
+            width: 45%;
+            height: 977px;
+            float: left;
+            position: relative;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(.6);
+                //transform: translateX();
+            }
+            >h1{
+                position: absolute;
+                top: 25%;
+                left: 20px;
+                font: 300 45px/1.1 $subfont;
+                color: #fff;
+
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 0%;
+                    height: 3px;
+                    background: $onblackbg;
+                    position: absolute;
+                    bottom: -10px;
+                    transition: 1s .5s;
+                }
+            }
+
+        }
         section{
-            width: 100%;
+            width: 55%;
+            float: right;
+            background: rgba(0,0,0,.2);
+            padding-bottom: 0;
+            position: relative;
+
+            .back{
+                width: 500px;
+                z-index: -1;
+                opacity: .7;
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%,-50%);
+                img{ width: 100%; }
+            }
             .success{
                 width: 100%;
                 padding: 20px;
@@ -21,13 +80,12 @@
             form{
                 width: 100%;
                 background: rgba(255, 255, 255, 0.8);
-                padding: 50px;
+                padding: 0px 50px;
                 fieldset{
                     width: 100%;
                     table{
                         width: 100%;
-                        border-top: 1px solid $elite; 
-                        border-collapse: separate;                       
+                        border-collapse: collapse;                       
                         tbody{
                             tr{
                                 position: relative;
@@ -37,21 +95,21 @@
                                 // 공통 레이아웃
                                 th, td{ 
                                     padding: 30px 30px;
-                                    border-bottom: 1px solid $elite;
+                                    border-bottom: 1px solid #ccc;
                                 }
 
                                 // th L/O
                                 th{ 
                                     width: 10%;
                                     text-align: left;
-                                    color: $wolrd;
+                                    color: $elite;
 
                                     &.btnSet{ 
                                         width: 100%;
                                         text-align: center;
                                         background: none;
                                         padding: 30px 0;
-
+                                        border-bottom: none;
                                         input[type=reset], input[type=submit]{
                                             width: 120px;
                                             height: 40px;
@@ -75,7 +133,7 @@
                                     position: relative;
 
                                     input[type=text], input[type=password],input[type=email], select{
-                                        width: 60%;
+                                        width: 70%;
                                         padding: 5px 10px;
                                         border: 1px solid #ccc;
                                     }
@@ -85,7 +143,7 @@
                                         }
                                     }
                                     textarea{
-                                        width: 60%;
+                                        width: 100%;
                                         padding: 5px 10px;
                                         resize: none;
                                         border: 1px solid #ccc;

@@ -17,7 +17,7 @@ export default function Header(props){
     useEffect(()=>{
         window.addEventListener('resize', closeNav);
         return ()=> window.removeEventListener('resize', closeNav);
-    },[])
+    },[]);
 
     return(
         <>

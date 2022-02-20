@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function Community(){
-    let main = useRef(null);
+    const main = useRef(null);
     const path = process.env.PUBLIC_URL;
     const input = useRef(null); //inputBox의 input에 입력되는 값 useRef
     const textarea = useRef(null); //inputBox의 textarea에 입력되는 값 useRef
@@ -126,9 +126,11 @@ export default function Community(){
         <main className="content community" ref={main}>
             <figure className="subvisual">
                 <img src={path+'/img/community_sub.jpeg'} />
+                <div className="con">
+                    <h1>Creating limitless<br />possibilities for everyone</h1>                    
+                </div>
             </figure>
             <div className="inner">
-                <h1>community</h1>
                 <section>
                     <div className="inputBox">
                         <input 
@@ -148,11 +150,11 @@ export default function Community(){
                                 //cancle버튼 클릭 시 내용 없어지게 하는 것
                                 input.current.value ='';
                                 textarea.current.value = '';
-                            }}>cancle</button>
-                            <button onClick={createPost}>create</button>
+                            }}>CANCLE</button>
+                            <button onClick={createPost}>CREAT</button>
                         </div>
                     </div>
-    
+
                     <div className="showList" ref={showbox}>
                         {posts.map((post, index)=>{
                             return (
@@ -198,6 +200,18 @@ export default function Community(){
                                 </article>
                             )
                         })}
+                    </div>
+
+                    <div className="cards">
+                        <article className="card">
+                            <img src={path+'/img/standard_card.png'} />
+                        </article>
+                        <article className="card">
+                            <img src={path+'/img/world_card.jpeg'} />
+                        </article>
+                        <article className="card">
+                            <img src={path+'/img/elite_card.png'} />
+                        </article>                        
                     </div>
                 </section>
             </div>

@@ -128,16 +128,21 @@ export default function Join(){
     })
     const path = process.env.PUBLIC_URL;
     return(
-        
         <main className="content join" ref={main}>
-            <figure className="subvisual">
+            {/* <figure className="subvisual">
                 <img src={path+'/img/join_sub.jpeg'} />
-            </figure>
-            <div className="back">
-                <img src={path+'/img/joinback.png'}/>
-            </div>
-            <div className="inner">       
+            </figure> */}
+
+            <div className="inner">
+                <div className="title">
+                    <img src={path+'/img/join_sub.jpeg'} />
+                    <h1>Join member Mastercard</h1>                      
+                </div>
+   
                 <section>
+                    <div className="back">
+                        <img src={path+'/img/joinback.png'}/>
+                    </div>
                     { success ? <div className="success">회원가입을 축하합니다.</div> : null}
                     {/* submit 제출 시 handleSubmit 함수 호출 */}
                     <form onSubmit={handleSubmit}>

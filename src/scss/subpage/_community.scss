@@ -1,11 +1,20 @@
 .community{
     .inner{
         section{
+            border: 1px solid red;
+            height: 100vh;
+
+            &::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
             // 입력창
             .inputBox{
-                width: 100%;
+                width: 30%;
+                height: 375px;
                 padding: 30px;
-                margin-bottom: 50px;
+                float: left;
 
                 input{
                     width: 100%;
@@ -25,11 +34,13 @@
                     justify-content: space-evenly;
                     align-items: center;
                     button{
-                        width: 250px;
+                        width: 120px;
                         height: 30px;
-                        font: 12px/1 'arial';
+                        font:bold 12px/32px $subfont;
+                        color: $elite;
                         letter-spacing: 1px;
-                        background: rgba(255, 241, 214, 0.7);
+                        background: $onblackbg;
+                        border-radius: 15px;
                         border: none;
                         transition: .5s;
 
@@ -40,17 +51,42 @@
                 }
 
             }
+
+            .cards{
+                width: 30%;
+                height: calc((100% - 375px));
+                float: left;
+                border: 1px solid red;
+
+                .card{
+                    width: 100%;
+                    height: calc(100%/3);
+                    padding: 20px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+
             // 출력창
             .showList{
-                width: 100%;
+                width: 70%;
                 padding: 30px;
+                float: right;
+                height: 100%;
+                overflow-y: scroll;
+                border-left: 1px solid $onblackbg;
 
+                // 출력된 아티클들 속성
                 article{
                     width: 100%;
                     padding: 30px;
-                    border-bottom: 1px solid #ccc;
+                    border: 1px solid #aaa;
                     margin-bottom: 30px;
-                    background: rgba(253, 245, 230, 0.2);
+                    // background: $onblackbg;
+                    //opacity: .6;
 
                     .post{
                         // 초기화면

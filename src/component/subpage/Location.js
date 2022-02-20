@@ -4,6 +4,9 @@ import { faEnvelope, faEnvelopeOpen, faLocationDot, faMap, faPhone } from "@fort
 
 export default function Location(){
     let main = useRef(null);
+    const con1 = useRef(null);
+    const con2 = useRef(null);
+    const con3 = useRef(null);
     const {kakao} = window; //인덱스.html 에서 가져옴 (비구조할당)
     const container = useRef(null); //지도가 들어갈 공간 참조 (#map)
     const [map, setMap] = useState(null); //지도 생성 참조
@@ -54,7 +57,11 @@ export default function Location(){
 
     //처음 컴포넌트 생성 시 한번만 실행
     useEffect(()=>{
-        main.current.classList.add('on');        
+        main.current.classList.add('on'); 
+        con1.current.classList.add('on');
+        con2.current.classList.add('on');
+        con3.current.classList.add('on');
+        
     },[]) 
 
     //&&index state값이 변경될 때마다 해당 useEffect를 재실행
@@ -70,20 +77,6 @@ export default function Location(){
         // 2. 지도 생성하는 코드
         const map = new kakao.maps.Map(container.current, options);
         setMap(map);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         // 4. 마커 생성하는 코드 (const index값 참조)
         new kakao.maps.Marker({
@@ -121,22 +114,45 @@ export default function Location(){
         <main className="content location" ref={main}>
             <figure className="subvisual">
                 <img src={path+'/img/location_sub.jpeg'} />              
+                <div className="con">
+                    <h1>Creating limitless<br />possibilities for everyone</h1>                    
+                </div>
             </figure>
             <div className="inner">
                 <section>
-                    {/* 메세지 */}
-                    <div className="contact">
-                        <h2><FontAwesomeIcon icon={faEnvelopeOpen} /> <br /> SEND US A MESSAGE</h2>
-                        <textarea id="comment" cols="30" rows="10" placeholder="What's i your mind..."></textarea>
-                        <div className="con">
-                            
-                            <input type="text" id="name" placeholder="Name"/>
-                            <input type="email" id="email" placeholder="Emali"/>
-
-                            <input type="submit" value="SEND NOW" />
-                        </div>
+                    {/* 콘텐츠 */}
+                    <div className="atms">
+                        <h1>Get the fact on using ATMs abroad</h1>
+                        <article ref={con1}>
+                            <div className="pic">
+                                <img src={path+'/img/loca_value.png'}/>
+                            </div>
+                            <div className="con">
+                                <h2>Better value</h2>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores cum cumque alias voluptas omnis consequatur fuga quae corrupti quos dicta?</p>
+                            </div>
+                        </article>
+                        <article ref={con2}>
+                            <div className="pic">
+                                <img src={path+'/img/loca_conven.png'}/>
+                            </div>
+                            <div className="con">
+                                <h2>More convenient</h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque eum quidem sit aut recusandae at ea quod laudantium.</p>
+                            </div>
+                        </article>
+                        <article ref={con3}>
+                            <div className="pic">
+                                <img src={path+'/img/loca_secure.png'}/>
+                            </div>
+                            <div className="con">
+                                <h2>More secure</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A doloremque, reiciendis dolore fugit laboriosam harum repellendus voluptatem, magni ab voluptatibus, obcaecati dolor velit eaque aliquam!</p>
+                            </div>
+                        </article>
                     </div>
-                    {/* 지점 설정 버튼 */}
+
+                    {/* 버튼 */}
                     <div className="btns">
                         
                         <h2><FontAwesomeIcon icon={faMap} /> <br /> LOCATION</h2>
@@ -174,8 +190,9 @@ export default function Location(){
                             }}>교통정보 끄기</button>
                         </nav>                         
                     </div>
+
                     {/* 지도 */}
-                    <div className="wrap">
+                    <div className="wrapMap">
                         <div className="branch_info">
                             <article className="on">
                                 <h3>{info[0].title}</h3>
@@ -208,6 +225,18 @@ export default function Location(){
                         <div id="map" ref={container}></div>
                     </div>
 
+                    {/* 메세지 */}
+                    <div className="contact">
+                        <h2><FontAwesomeIcon icon={faEnvelopeOpen} /> <br /> SEND US A MESSAGE</h2>
+                        <textarea id="comment" cols="30" rows="10" placeholder="What's i your mind..."></textarea>
+                        <div className="con">
+                            
+                            <input type="text" id="name" placeholder="Name"/>
+                            <input type="email" id="email" placeholder="Emali"/>
+
+                            <input type="submit" value="SEND NOW" />
+                        </div>
+                    </div>
 
                 </section>
             </div>
