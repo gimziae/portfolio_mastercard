@@ -13,7 +13,7 @@
 
     }
     .inner{
-        // width: 100%;
+        width: 90%;
         padding: 0;
         transform: translate(0, 0) scale(1.02);
         transition: 1s;
@@ -25,7 +25,7 @@
         }
         .title{
             width: 45%;
-            height: 977px;
+            height: 1043px;
             float: left;
             position: relative;
             img{
@@ -80,9 +80,15 @@
             form{
                 width: 100%;
                 background: rgba(255, 255, 255, 0.8);
-                padding: 0px 50px;
+                padding: 0px 30px;
                 fieldset{
                     width: 100%;
+
+                    .terms{
+                        width: 100%;
+                        height: 200px;
+                        resize: none;
+                    }
                     table{
                         width: 100%;
                         border-collapse: collapse;                       
@@ -94,7 +100,7 @@
                                 
                                 // 공통 레이아웃
                                 th, td{ 
-                                    padding: 30px 30px;
+                                    padding: 20px 30px;
                                     border-bottom: 1px solid #ccc;
                                 }
 
@@ -112,15 +118,18 @@
                                         border-bottom: none;
                                         input[type=reset], input[type=submit]{
                                             width: 120px;
-                                            height: 40px;
-                                            margin: 0 50px;
+                                            height: 30px;
+                                            margin: 0 30px;
+                                            border-radius: 15px;
                                             background: $onblackbg;
                                             border: none;
                                             color: #fff;
-                                            font: 14px/30px 'arial';
+                                            font: 12px/32px $subfont;
                                             letter-spacing: 2px;
                                             cursor: pointer;
                                             transition: .5s;
+
+                                            &:hover{background: $orange;}
                                         }
                                         
                                     }                                    
@@ -159,11 +168,11 @@
 
 
                                     .err{
-                                        font: normal 11px/1 'arial';
+                                        font: normal 10px/1 'arial';
                                         color: $red;
                                         position: absolute;
-                                        left: 35px;
-                                        bottom: 10px;
+                                        left: 32px;
+                                        bottom: 8px;
                                     }                                    
                                 }
                             }

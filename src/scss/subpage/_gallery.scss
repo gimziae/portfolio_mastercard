@@ -56,13 +56,13 @@
         }
         //로딩바
         .loading{
-            border: 15px dotted $onblackbg;
+            border: 15px inset $onblackbg;
             width: 150px;
             height: 150px;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-20%);
+            transform: translate(-50%,-50%);
             border-radius: 50%;
             animation: loading 2s linear infinite;    
 
@@ -75,7 +75,14 @@
         }
         #imgs{
             width: 100%;
+            transform: translateY(30vh);
+            opacity: 0;
+            transition: .5s;
 
+            &.on{
+                transform: translateY(0);
+                opacity: 1;
+            }
             &::after{
                 content: '';
                 display: block;

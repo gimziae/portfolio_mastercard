@@ -5,47 +5,13 @@
             width: 100%;
             margin: 0 auto;
             position: relative;
-            .welcome{
-                width: 100%;
-                position: relative;
-                margin-bottom: 100px;
-
-                &::after{
-                    content: '';
-                    display: block;
-                    clear: both;
-                }
-                .txt{
-                    width: 60%;
-                    float: left;
-                    padding: 70px 40px 40px 0;
-
-                    p{
-                        font: normal 20px/1.5 '$subfont';
-                        letter-spacing: 1px;
-                        color: $elite;
-                        border-left: 8px solid $onblackbg;
-                        padding-left: 40px;
-                        span{ font-size: 18px;}                  
-                    }
-
-                }
-                .pic{
-                    width: 40%;
-                    float: right;
-                    img{
-                        width: 100%;
-                        object-fit: cover;
-                    }
-                }
-            }
 
             .business{
                 width: 100%;
                 margin-bottom: 100px;
                 h2{
-                    font: normal 35px/1 'arial';
-                    color: $elite;
+                    font: normal 30px/1 $subfont;
+                    color: $standard;
                     margin-bottom: 80px;
                     text-align: center;
                 }
@@ -81,7 +47,7 @@
                             img{ width: 100%; }
                         }
                         .txt{
-                            color: $elite;
+                            color: $standard;
                             h3{
                                 font: 20px/1.4 'arial';
                                 margin-bottom: 20px;
@@ -99,13 +65,49 @@
 
             }
 
+            .welcome{
+                width: 100%;
+                position: relative;
+                margin-bottom: 100px;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+                .txt{
+                    width: 60%;
+                    float: left;
+                    padding: 70px 40px 40px 0;
+
+                    p{
+                        font: 300 20px/1.5 '$subfont';
+                        letter-spacing: 1px;
+                        color: $standard;
+                        border-left: 8px solid $onblackbg;
+                        padding-left: 40px;
+                        span{ font-size: 18px;}                  
+                    }
+
+                }
+                .pic{
+                    width: 40%;
+                    float: right;
+                    img{
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
             .members{
                 width: 100%;
                // border: 1px solid red;
 
                 h2{
-                    font: normal 35px/1 arial;
-                    margin-bottom: 80px;
+                    font: bold 30px/1 $subfont;
+                    margin-bottom: 50px;
+                    color: $standard;
                     text-align: center;
                 }
 

@@ -10,9 +10,10 @@ export default function Department(){
     const serve3 = useRef(null);
     const serve4 = useRef(null);
     const serve5 = useRef(null);
+
     const path = process.env.PUBLIC_URL;
     const [members,setMembers] = useState([]); //member 배열을 받기위한 빈 배열
-    const url = `${path}/db/department.json`; //department.json 데이타 url
+    const url = `${path}/DB/department.json`; //department.json 데이타 url
     useEffect(()=>{
         main.current.classList.add("on");
 
@@ -25,7 +26,7 @@ export default function Department(){
         axios
             .get(url)
             .then(json=>{
-                //console.log(json.data.data);
+                // console.log(json.data.data);
                 setMembers(json.data.data);
             })
         
@@ -41,7 +42,7 @@ export default function Department(){
             <div className="inner">
                 <section>
                     <div className="business">
-                        <h2>Who we serve?</h2>  
+                        <h2>WHO WE SERVE?</h2>  
                         <article ref={serve1}>
                             <div className="wrap">
                                 <div className="pic">
@@ -114,7 +115,7 @@ export default function Department(){
                     </article>
 
                     <div className="members">
-                        <h2>Our Team</h2>
+                        <h2>OUR TEAM</h2>
                         {members.map((data,idx)=>{
                             return(
                                 <article key={idx}>

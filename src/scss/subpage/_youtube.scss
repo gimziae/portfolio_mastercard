@@ -1,84 +1,214 @@
 .youtube{
     .inner{
-        .channerInfo{
-            border: 1px solid red;
-            width: 100%;
-            padding: 50px 0;
-
-            &::after{
-                content: '';
-                display: block;
-                clear: both;
-            }
-            .pic{
-                width: 300px;
-                // height: 300px;
-                border: 1px solid red;
-                float: left;
-                text-align: center;
-                img{
-                    display: inline-block;
-                    width: 250px;
-                    height: 250px;
-                    border-radius: 50%;
-                    margin-bottom: 20px;
-                }
-                a{
-                    display: inline-block;
-                    text-align: center;
-                    width: 150px;
-                    height: 40px;
-                    background: $red;
-                    border-radius: 5px;
-                    font: bold 18px/44px $subfont;
-                    color: $standard;
-                }
-            }
-            .con{
-                border: 1px solid red;
-                width: calc(100% - 300px);
-                float: right;
-                padding: 30px;
-            }
-        }
         section{
             width: 100%;
 
-            .vidList{
-                border: 1px solid red;
+            // 미리보기
+            .preview{
+                // border: 1px solid red;
                 width: 100%;
-                padding: 50px 0;
+                height: 350px;
+                margin-bottom: 100px;
+                position: relative;
 
-                .vids{
-                    border: 1px solid red;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
                     width: 100%;
-                    height: 480px;
-                    margin: 0 5%;
+                    height: 1px;
+                    background-color: #3e3e3e;
+                    position: absolute;
+                    bottom: -100px;
+                }
+                .video{
+                    // border: 1px solid red;
+                    width: 50%;
+                    height: 100%;
+                    float: right;
 
-                    &::after{
-                        content: '';
-                        display: block;
-                        clear: both;
+                    iframe{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        filter: brightness(.85);
                     }
+                }
+                >.con{
+                    float: left;
+                    width: 50%;
+                    height: 100%;
+                    padding: 40px 60px;
+                    position: relative;
+                    text-align: right;
+                    opacity: 0;
+                    transition: 3s .5s;
+                    &.on{ opacity: 1; }
+
+                    h2{
+                        font: normal 28px/1.1 $subfont;
+                        color: $standard;
+
+                        span{
+                            color: $onblackbg; 
+                            font-size: 50px;
+                            font-weight: bold;
+                        }
+                    }
+                    p{
+                        font: 300 16px/1.6 $subfont;
+                        color: #878787;
+                        padding-right: 60px;
+                        position: absolute;
+                        bottom: 20px;
+                    }
+                }
+            }
+
+            // 채널정보
+            .channerInfo{
+                border: 1px solid red;
+                width: 70%;
+                padding: 50px 0;
+                margin: 0 auto;
+    
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+                .pic{
+                    width: 300px;
+                    // height: 300px;
+                    border: 1px solid red;
+                    float: left;
+                    text-align: center;
+                    img{
+                        display: inline-block;
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 50%;
+                        margin-bottom: 20px;
+                    }
+                    a{
+                        display: inline-block;
+                        text-align: center;
+                        width: 150px;
+                        height: 40px;
+                        background: $red;
+                        border-radius: 5px;
+                        font: bold 18px/44px $subfont;
+                        color: $standard;
+                    }
+                }
+                .con{
+                    border: 1px solid red;
+                    width: calc(100% - 300px);
+                    float: right;
+                    padding: 30px;
+                    color: $standard;
+                }
+            }
+
+            // 비디오 리스트
+            .vidList{
+                border: none;
+                width: 100%;
+                
+
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                }                
+                .vids{
+                    width: calc(100%/3);
+                    height: 380px;
+                    float: left;
+                    position: relative;
+                    transition: .5s;
+                    border-bottom: 1px solid #3e3e3e;
+                    
+                    &:hover{
+                        background-color: rgba(75, 75, 75, 0.3);
+                        .wrap{
+                            .con h2{color: $onblackbg;}
+                            .pic{
+                                filter: grayscale(0); 
+                                img{transform: scale(1.1);}
+                                
+                            }
+                        }
+                    }
+
                     .wrap{
-                        width: 20%;
-                        float: left;
+                        width: 100%;
+                        padding: 20px;
+                        position: absolute;
+                        top: 0;
+
                         .pic{
                             width: 100%;
                             padding: 0px;
+                            filter: grayscale(.5);
+                            cursor: pointer;
+                            overflow: hidden;
+                            margin-bottom: 10px;
                             img{
                                 width: 100%;
                                 height: 100%;
                                 object-fit: cover;
+                                transition: .5s;
                             }
                         }
                         .con{
-                            color: $elite;
-                            padding: 20px;
+                            color: $standard;
+                            padding: 10px;
+                            
+                            h2{
+                                font: bold 20px/1 $subfont;
+                                word-break: break-all;
+                                color: #ddd;
+                                // text-align: center;
+                            }
+                            p{
+                                padding: 10px 0;
+                                font: 300 14px/1.2 $subfont;
+                                letter-spacing: 1px;
+                                color: #878787;
+                                word-break: break-all;
+                            }
                         }
+                    }
+                    span{
+                        font: normal 12px/1 $subfont;
+                        color: #999;
+                        position: absolute;
+                        bottom: 30px;
+                        right: 30px;
                     }
                 }
             }
         }
+    }
+}
+
+.popup{
+    width: 100%;
+    height: 100vh;
+    padding: 8vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+
+    span{
+        cursor: pointer;
+        color: $standard;
+        font: 15px/30px $subfont;
+        text-align: center;
+        transition: .5s;
+        &:hover{color: $onblackbg;}
     }
 }

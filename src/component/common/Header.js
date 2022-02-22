@@ -62,7 +62,7 @@ export default function Header(props){
 
     // menu component
     function Gnb(props){
-        const active = {color: 'orange'}
+        const active = {color: "#ffb850"}
         return(
             <ul id="gnb" onClick={props.toggleNav}>
                 <li><NavLink activeStyle={active} to='/department'>Department</NavLink></li>

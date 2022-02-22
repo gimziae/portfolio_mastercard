@@ -93,8 +93,17 @@ header{
         z-index: 5;
     }
     &.sub{
-        background: #111;
-        .inner{border-color: #111;}
+        // background: #111;
+        .inner{
+            // border-color: #111;
+            #gnb li{  
+                a{transition: .5s;}
+                &:hover, &.on{
+                  
+                    a{color: $onblackbg;}
+                }
+            }
+        }
     }
 }
 

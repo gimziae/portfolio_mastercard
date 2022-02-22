@@ -136,7 +136,7 @@ export default function Join(){
             <div className="inner">
                 <div className="title">
                     <img src={path+'/img/join_sub.jpeg'} />
-                    <h1>Join member Mastercard</h1>                      
+                    <h1>Join member <br /> Mastercard</h1>                      
                 </div>
    
                 <section>
@@ -147,6 +147,8 @@ export default function Join(){
                     {/* submit 제출 시 handleSubmit 함수 호출 */}
                     <form onSubmit={handleSubmit}>
                         <fieldset>
+                            <label htmlFor="terms">terms & policy</label>
+                            <textarea name="terms" className="terms">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non magnam, rerum in facere perferendis quibusdam molestiae accusantium est temporibus sint ex provident soluta ut enim ea commodi odio quis! Odit consectetur cum fugit, eaque et alias ex veniam tempore hic pariatur eligendi magni, tempora quasi ullam necessitatibus amet optio voluptatibus labore est numquam praesentium neque quis. Cumque et repellendus deleniti modi in, explicabo dolores molestiae provident cupiditate voluptatibus ipsam placeat vel error perspiciatis illum eaque possimus, accusamus non minima ullam! Fuga nulla quidem quae officia delectus alias sed illum doloremque soluta id laborum hic, similique quam, labore ducimus asperiores error?</textarea>
                             <legend className="hidden">회원가입 양식</legend>
                             <table>
                                 <caption className="hidden">회원가입 입력</caption>

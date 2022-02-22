@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImages } from "@fortawesome/free-solid-svg-icons";
 
 // redux
-import { useSelector,useDispatch } from "react-redux";
-import { setFlickr } from "../../redux/action";
+// import { useSelector,useDispatch } from "react-redux";
+// import { setFlickr } from "../../redux/action";
 
 export default function Gallery(){
     const main = useRef(null);
@@ -19,8 +19,8 @@ export default function Gallery(){
     const [pop, setPop] = useState(false);
 
     // redux
-    const picData = useSelector(state=>state.flickrReducer.flickr);
-    const dispatch = useDispatch();
+    // const picData = useSelector(state=>state.flickrReducer.flickr);
+    // const dispatch = useDispatch();
 
     // flickr 
     const getFlickr = async opt=>{
@@ -67,7 +67,7 @@ export default function Gallery(){
             frame.current.classList.remove('on'); //frame(section) on 제거
             getFlickr({
                 type: 'interest',
-                count: 50
+                count: 20
             }); //flick interest 실행
         }
     } 
@@ -88,7 +88,7 @@ export default function Gallery(){
             frame.current.classList.remove('on');
             getFlickr({
                 type: 'search',
-                count: 50,
+                count: 20,
                 tags: result
             }); 
             //^getFlickr 내부에 enableClick(true) 마지막에 실행해 원래 값으로 돌려주다      
@@ -115,7 +115,7 @@ export default function Gallery(){
             frame.current.classList.remove('on');
             getFlickr({
                 type: 'search',
-                count: 50,
+                count: 20,
                 tags: result
             }); 
             //^getFlickr 내부에 enableClick(true) 마지막에 실행해 원래 값으로 돌려주다                         

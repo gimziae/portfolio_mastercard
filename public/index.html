@@ -6,9 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>portfolio_master card</title>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=79c0df25605b0f7facb1369d9be6fe68"></script>
+    <!-- mask 스타일값 생성 -->
+    <style>
+      .default{
+        position: absolute;
+        top: -99999px;
+      }
+      .mask{
+        width: 100%; height: 100vh; background: #212121;
+        position: fixed; top: 0; left: 0; z-index: 100;
+        transition: opacity 2s; opacity: 1;
+        display: flex; justify-content: center; align-items: center;
+        font: bold 40px/1 'arial'; color: #f3f3f3;
+      }
+      .mask.off{
+        opacity: 0;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <!-- cashing mask 생성 -->
+    <div class="default"></div>
+    <div class="mask">LOADING...</div>
+
+    <script>
+      const imgs = [
+        // 'http://localhost:3001/portfolio_mastercard/img/Header_video.mp4',
+        'http://localhost:3000/portfolio_mastercard/img/gallery_sub.jpeg',
+        'http://localhost:3000/portfolio_mastercard/img/department_sub.jpeg',
+        'http://localhost:3000/portfolio_mastercard/img/join_sub.jpeg',
+        ];
+      const len = imgs.length;
+      const defaults = document.querySelector('.default');
+      const mask = document.querySelector('.mask');
+      let tags = '';
+
+      imgs.forEach(src=>{
+        tags +=`<img src=${src} />`;
+      });
+      defaults.innerHTML = tags;
+
+      let count = 0;
+      const imgDOM = defaults.querySelectorAll('img');
+      imgDOM.forEach(img=>{
+        img.onload = () => {
+          count++;
+
+          if(count === len){
+            defaults.remove();
+            mask.classList.add('off');
+            setTimeout(()=>mask.remove(), 2000);
+          }
+        }
+      })
+    </script>
   </body>
 </html>
