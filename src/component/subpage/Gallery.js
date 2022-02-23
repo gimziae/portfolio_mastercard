@@ -3,6 +3,7 @@ import axios from "axios";
 import Masonry from 'react-masonry-component';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImages } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 // redux
 // import { useSelector,useDispatch } from "react-redux";
@@ -145,12 +146,12 @@ export default function Gallery(){
             <div className="inner">
                 {/* visual */}
                 <article>
-
+                
                 </article>
 
 
                 {/* 제목 클릭 시 flickr interest 동작 */}
-                <h2 onClick={showInterest}><FontAwesomeIcon icon={faImages} /> <br /> GALLERY</h2>
+                <h2 onClick={showInterest}>GALLERY</h2>
 
                 {/* 검색기능 */}
                 <div className="search">
@@ -176,7 +177,6 @@ export default function Gallery(){
                         return(
                             <article key={index} className='item'>
                                 <div className='wrap'>
-                                    {/* pic에다가 클릭 이벤트 걸어주기 'onClick' */}
                                     <div
                                         className='pic' 
                                         onClick={()=>{
@@ -188,7 +188,7 @@ export default function Gallery(){
                                         <img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} />
                                     </div>
                                     <div className="txt">
-                                        <h3>{ title_len > 20 ? title.substr(0,40) + '...' : title }</h3>
+                                        <h3>{ title_len > 20 ? title.substr(0,20) + '...' : title }</h3>
                                     </div>        
                                 </div>
                     
@@ -209,12 +209,12 @@ export default function Gallery(){
             return ()=> document.body.style.overflow = 'auto';
         })
         return(
-            <aside className='popup'>
+            <aside className='popup_gallery'>
                 <h1>{items[index].title}</h1>
                 <img src={`https://live.staticflickr.com/${items[index].server}/${items[index].id}_${items[index].secret}_b.jpg`} />
                 <span onClick={()=>{
                     setPop(false);
-                }}>close</span>
+                }}>CLOSE</span>
             </aside>
         )
     }

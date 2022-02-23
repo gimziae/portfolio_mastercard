@@ -132,87 +132,124 @@ export default function Community(){
             </figure>
             <div className="inner">
                 <section>
-                    <div className="inputBox">
-                        <input 
-                            type="text" 
-                            placeholder="제목을 입력하세요."
-                            ref={input}
-                        /> <br />
-                        <textarea 
-                            cols="30" rows="10"
-                            placeholder="내용을 입력하세요"
-                            ref={textarea}
-                        ></textarea> <br />
-    
+                    <div className="mission">
+                        <div className="video_wrap">
+                            <video src={path+'/img/community.mp4'} autoPlay muted loop></video>
+                        </div>
+                        <div className="txt">
+                            <span>SUSTAINABILITY AT MASTERCARD</span>
+                            <h2>OUR MISSION IS TO CONNECT AND <br /> POWER A DIGITAL ECONOMY THAT <br /> BENEFITS EVERYONE, EVERYWHERE <br /> BY MAKING TRANSATIONS <br /> <span>SAFE, SIMPLE, SMART <br />AND ACCESSIBLE.</span></h2>
+                            <p>We understand how interconnected the world is, and we see firsthand how our commitment to environmental and social responsibility - and our core values of operating ethically and responsibly and with decency - is directly connected to our continuing success as a business.</p>
+                        </div>
 
-                        <div className="inputBtns">
-                            <button onClick={()=>{
-                                //cancle버튼 클릭 시 내용 없어지게 하는 것
-                                input.current.value ='';
-                                textarea.current.value = '';
-                            }}>CANCLE</button>
-                            <button onClick={createPost}>CREAT</button>
+                        <div className="logo">
+                            <div className="logo_wrap">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <a href="#">MORE ABOUT <br />MASTERCARD</a>
                         </div>
                     </div>
 
-                    <div className="showList" ref={showbox}>
-                        {posts.map((post, index)=>{
-                            return (
-                                <article key={index}>
-                                    {
-                                        // 만약에 클래스명에 enableUpdate가 붙었다면
-                                        post.enableUpdate
-                                        ?
-                                        <>
-                                        {/* 수정화면 생성 */}
-                                            <div className="post">
-                                                <input 
-                                                    type="text" 
-                                                    defaultValue={post.title}
-                                                    ref={updateInput}
-                                                /><br />
-                                                <textarea 
-                                                    defaultValue={post.content}
-                                                    ref={updateTextarea}
-                                                ></textarea>
-                                            </div>
-                                            
-                                            <div className="btns">
-                                                <button onClick={()=>updatePost(index)}>update</button>
-                                                <button onClick={()=>disableUpdate(index)}>cancle</button>
-                                            </div>
-                                        </>
-                                        // 클래스명이 없을 때
-                                        :
-                                        <>
-                                        {/* 초기화면 */}
-                                            <div className="post">
-                                                <h2>{post.title}</h2>
-                                                <p>{post.content}</p>
-                                            </div>
-                                            
-                                            <div className="btns">
-                                                <button onClick={()=>enableUpdate(index)}>modify</button>
-                                                <button onClick={()=>deletePost(index)}>delete</button>
-                                            </div>
-                                        </>
-                                    }
-                                </article>
-                            )
-                        })}
-                    </div>
+                    <h1>GUEST BOARD</h1>
+                    <div id="board">
+                        <div className="inputBox">
+                            <div className="wrap">
+                                <input 
+                                    type="text" 
+                                    placeholder="제목을 입력하세요."
+                                    ref={input}
+                                /> <br />
+                                <textarea 
+                                    cols="30" rows="10"
+                                    placeholder="내용을 입력하세요"
+                                    ref={textarea}
+                                ></textarea> <br />
+            
 
-                    <div className="cards">
-                        <article className="card">
-                            <img src={path+'/img/standard_card.png'} />
-                        </article>
-                        <article className="card">
-                            <img src={path+'/img/world_card.jpeg'} />
-                        </article>
-                        <article className="card">
-                            <img src={path+'/img/elite_card.png'} />
-                        </article>                        
+                                <div className="inputBtns">
+                                    <button onClick={()=>{
+                                        //cancle버튼 클릭 시 내용 없어지게 하는 것
+                                        input.current.value ='';
+                                        textarea.current.value = '';
+                                    }}>CANCLE</button>
+                                    <button onClick={createPost}>CREAT</button>
+                                </div>                            
+                            </div>
+
+                        </div>
+
+                        <div className="showList" ref={showbox}>
+                            <div className="wrap">
+                            {posts.map((post, index)=>{
+                                return (
+                                    <article key={index}>
+                                        {
+                                            // 만약에 클래스명에 enableUpdate가 붙었다면
+                                            post.enableUpdate
+                                            ?
+                                            <>
+                                            {/* 수정화면 생성 */}
+                                                <div className="post">
+                                                    <input 
+                                                        type="text" 
+                                                        defaultValue={post.title}
+                                                        ref={updateInput}
+                                                    /><br />
+                                                    <textarea 
+                                                        defaultValue={post.content}
+                                                        ref={updateTextarea}
+                                                    ></textarea>
+                                                </div>
+                                                
+                                                <div className="btns">
+                                                    <button onClick={()=>updatePost(index)}>UPDATE</button>
+                                                    <button onClick={()=>disableUpdate(index)}>CANCLE</button>
+                                                </div>
+                                            </>
+                                            // 클래스명이 없을 때
+                                            :
+                                            <>
+                                            {/* 초기화면 */}
+                                                <div className="post">
+                                                    <h2>{post.title}</h2>
+                                                    <p>{post.content}</p>
+                                                </div>
+                                                
+                                                <div className="btns">
+                                                    <button onClick={()=>enableUpdate(index)}>MODIFY</button>
+                                                    <button onClick={()=>deletePost(index)}>DELETE</button>
+                                                </div>
+                                            </>
+                                        }
+                                    </article>
+                                )
+                            })}                            
+                            </div>
+
+                        </div>                        
                     </div>
+                    
+                    {/* <div className="mission">
+                        <div className="video_wrap">
+                            <video src={path+'/img/community.mp4'} autoPlay muted loop></video>
+                        </div>
+                        <div className="txt">
+                            <span>SUSTAINABILITY AT MASTERCARD</span>
+                            <h2>OUR MISSION IS TO CONNECT AND <br /> POWER A DIGITAL ECONOMY THAT <br /> BENEFITS EVERYONE, EVERYWHERE <br /> BY MAKING TRANSATIONS <br /> <span>SAFE, SIMPLE, SMART <br />AND ACCESSIBLE.</span></h2>
+                            <p>We understand how interconnected the world is, and we see firsthand how our commitment to environmental and social responsibility - and our core values of operating ethically and responsibly and with decency - is directly connected to our continuing success as a business.</p>
+                        </div>
+
+                        <div className="logo">
+                            <div className="logo_wrap">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <a href="#">MORE ABOUT <br />MASTERCARD</a>
+                        </div>
+                    </div> */}
+
+
                 </section>
             </div>
         </main>
