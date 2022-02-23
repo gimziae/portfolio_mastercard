@@ -144,43 +144,43 @@ export default function Location(){
                     </div>
 
                     {/* 지점 버튼 & 정보 */}
-                    <div className="branch_btns">
-                        <nav className="branch">
-                        {mapInfo.map((data, index)=>{
-                        return(
-                            <article key={index} onClick={()=>{ 
-                                setIndex(index)
-                                for(let i=0; i<mapInfo.length; i++){
-                                    branch_info[i].classList.remove('on');
-                                    branch_btns[i].classList.remove('on');
-                                }
-                                branch_info[index].classList.add('on');
-                                branch_btns[index].classList.add('on');
-                                console.log(index);
-                            }}>
+                    <nav className="branch">
+                    {mapInfo.map((data, index)=>{
+                    return(
+                        <article key={index} onClick={()=>{ 
+                            setIndex(index)
+                            for(let i=0; i<mapInfo.length; i++){
+                                branch_info[i].classList.remove('on');
+                                branch_btns[i].classList.remove('on');
+                            }
+                            branch_info[index].classList.add('on');
+                            branch_btns[index].classList.add('on');
+                            console.log(index);
+                        }}
+                        >
+                            <div className="info">
                                 <h2>{data.title}</h2>
                                 <address>
                                     {data.address} <br />
-                                    {data.tel} <br />
-                                    {data.email}
-                                </address>
-                            </article>  
-                            )
-                        })}
-                        </nav>                             
-                    </div>
+                                    T. {data.tel} <br />
+                                    M. {data.email}
+                                </address>                                
+                            </div>
+                        </article>  
+                    )
+                    })}
+                    </nav>                             
+
 
                     {/* 메세지 */}
                     <div className="contact">
-                        <h2><FontAwesomeIcon icon={faEnvelopeOpen} /> <br /> SEND US A MESSAGE</h2>
-                        <textarea id="comment" cols="30" rows="10" placeholder="What's i your mind..."></textarea>
-                        <div className="con">
-                            
-                            <input type="text" id="name" placeholder="Name"/>
-                            <input type="email" id="email" placeholder="Emali"/>
-
-                            <input type="submit" value="SEND NOW" />
-                        </div>
+                        <h2>CONTACT FORM</h2>
+                        <form action="">
+                            <input type="text" id="name" placeholder="Name"/> <br />
+                            <input type="email" id="email" placeholder="Emali"/> <br />
+                            <textarea id="comment" placeholder="What's i your mind..."></textarea>
+                            <input type="submit" value="Get in touch" />
+                        </form>
                     </div>
 
                 </section>
