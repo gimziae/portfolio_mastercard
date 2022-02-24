@@ -44,15 +44,15 @@ export default function Youtube(){
                 <section>
                     {/* 미리보기 */}
                     <div className="preview">
+                        <div className="con" ref={con}>
+                            <h2>MASTERCARD <br /> <span>INNOVATION</span></h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, voluptates et mollitia eum dolore consequatur vitae reprehenderit laudantium sint, fuga voluptatem nobis natus sit enim? Qui doloribus ex consequatur quae, eum repellat? Quis et cum nemo totam praesentium eum neque, quidem numquam culpa excepturi vitae. Nihil maxime quod molestiae perferendis?</p>
+                        </div>
                         <div className="video">
                             <iframe 
                                 src="https://www.youtube.com/embed/YG7DGOs-vMI" 
                                 title="YouTube video player" frameborder="0"  allowfullscreen>
                             </iframe>
-                        </div>
-                        <div className="con" ref={con}>
-                            <h2>MASTERCARD <br /> <span>INNOVATION</span></h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, voluptates et mollitia eum dolore consequatur vitae reprehenderit laudantium sint, fuga voluptatem nobis natus sit enim? Qui doloribus ex consequatur quae, eum repellat? Quis et cum nemo totam praesentium eum neque, quidem numquam culpa excepturi vitae. Nihil maxime quod molestiae perferendis?</p>
                         </div>
                     </div>
                     {/* 채널정보 */}
@@ -90,11 +90,11 @@ export default function Youtube(){
                                 </div>
                                 <div className="con">
                                     <h2>{ tit_len>30 ? tit.substr(0, 30) + "...": tit }</h2>
-                                    <p>{ desc_len>100 ? desc.substr(0,100) + "..." : desc }</p>       
+                                    <p>{ desc_len>100 ? desc.substr(0,100) + "..." : desc }</p>
+                                    <span>{date.split("T")[0]}</span>
                                 </div>
                                 
                             </div>
-                            <span>{date.split("T")[0]}</span>
                         </article>     
                             )                   
                         })}    

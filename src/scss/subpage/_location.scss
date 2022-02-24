@@ -200,3 +200,276 @@
         }
     }
 }
+
+// 890px ~ 1179px
+@media screen and(max-width: $tablet){
+    .location{
+        .inner{
+            width: 100%;
+            padding: 50px 20px 100px;
+            >section{       
+                // 교통정보 버튼              
+     
+                // 지도
+                .wrapMap{
+                    height: 500px;
+                
+                    .map_title{
+                        span{font-size: 12px;}
+                        >h1{font-size: 35px;}
+                        p{ font-size: 12px;}
+                    }           
+                }
+    
+                // 지점 정보 및 버튼
+                .branch{
+                    width: 100%;
+                    padding-bottom: 50px;
+                    &::after{
+                        content: '';
+                        display: block;
+                        clear: both;
+                    } 
+                    article{
+                        padding: 50px 10px;
+                        margin-right: 20px;
+
+                        .info{
+                            h2{font-size: 18px;}          
+                            address{font-size: 12px;}              
+                        }
+    
+                    }
+                }               
+                
+                // submit form
+                .contact{
+                    h2{ padding: 0 30px; }
+                    form{        
+                        textarea{ width: 90%;}
+                    }
+    
+                }
+    
+            }
+        }
+    }
+}
+
+// 750px ~ 889px
+@media screen and(max-width: 889px){
+    .location{
+        .inner{
+            >section{       
+                // 교통정보 버튼              
+                .traffic{
+                    position: absolute;
+                    top: 230px; right: 30px;
+                    width: 100%;
+                    text-align: right;
+                    padding: 5px;
+                }                 
+     
+                // 지도
+                .wrapMap{
+                    height: 770px;
+                    .map_title{
+                        float: left;
+                        width: 50%;
+                        padding: 20px 0;
+                        
+                        span{font-size: 12px;}
+                        >h1{font-size: 35px;}
+                        p{ font-size: 12px;}
+                    }
+                    #map{
+                        float: left;
+                        width: 100%;
+                        height: 500px;
+                        filter: grayscale(.2);
+                    }                
+                }
+    
+                // 지점 정보 및 버튼
+                .branch{
+                    article{
+                        .info{
+                            address{letter-spacing: 0;}              
+                        }
+    
+                    }
+                }
+                
+                // submit form
+                .contact{
+                    h2{font-size: 25px;}
+                    form{        
+                        input[type=submit]{
+                            width: 150px;
+                            font-size: 12px;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }  
+}
+
+// 540px ~ 749px
+@media screen and(max-width: $mobile){
+    .location{
+        .inner{
+            >section{       
+                padding-bottom: 0;
+                // 교통정보 버튼              
+                .traffic{top: 220px; right: 20px;}                 
+     
+                // 지도
+                .wrapMap{
+                    padding-bottom: 30px;
+                    height: 740px;
+                    .map_title{
+                        width: 60%;
+                        padding: 15px 0;
+                        >h1{font-size: 30px;}
+                    }             
+                }
+    
+                // 지점 정보 및 버튼
+                .branch{
+                    article{
+                        width: 100%;
+                        margin-right: 0;
+                        padding: 30px 0;
+                        .info{
+                            &::after{
+                                content: '';
+                                display: block;
+                                clear: both;
+                            } 
+                            h2{
+                                float: left; 
+                                width: 30%;
+                                height: 72px;
+                                margin-bottom: 0;
+                                // border: 1px solid red;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            
+                            address{
+                                float: left;
+                                letter-spacing: 1px;
+                            }              
+                        }
+    
+                    }
+                }
+                
+                // submit form
+                .contact{
+                    margin-top: 0;
+                    h2{width: 30%; font-size: 20px;}
+                    form{    
+                        width: 70%;    
+                        input[type=text],input[type=email]{
+                            width: 60%;
+                            height: 30px;
+                            margin-bottom: 10px;
+                        }
+                        input[type=submit]{
+                            width: 150px;
+                            font-size: 12px;
+                            height: 30px;
+                            line-height: 30px;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }  
+}
+
+// ~539px
+@media screen and(max-width: 539px){
+    .location{
+        .inner{
+            >section{       
+                padding-bottom: 0;
+                // 교통정보 버튼              
+                .traffic{ 
+                    top: 100px; right: 20px;
+                    span{font-size: 10px;}
+                    button{
+                        font-size: 1px;
+                        margin-left: 15px;
+                    }
+                }                 
+     
+                // 지도
+                .wrapMap{
+                    padding-bottom: 30px;
+                    height: 520px;
+                    .map_title{
+                        width: 60%;
+                        padding: 0;
+                        >h1{padding: 20px 0; font-size: 25px;}
+                        p{display: none;}
+                    }
+                    #map{height: 400px;}             
+                }
+    
+                // 지점 정보 및 버튼
+                .branch{
+                    padding-bottom: 30px;
+                    article{
+                        padding: 30px;
+                        .info{
+                            &::after{
+                                content: '';
+                                display: block;
+                                clear: both;
+                            } 
+                            h2{
+                                float: left; 
+                                width: 100%;
+                                height: 100%;
+                                margin-bottom: 20px;
+                                // border: 1px solid red;
+                                display: block;
+                                font-size: 15px;
+                            }
+                            
+                            address{
+                                float: left;
+                                letter-spacing: 1px;
+                            }              
+                        }
+    
+                    }
+                }
+                
+                // submit form
+                .contact{
+                    h2{
+                        width: 100%; 
+                        margin-bottom: 20px;
+                        text-align: left;
+                        padding: 0 20px;
+                    }
+                    form{    
+                        width: 100%;    
+                        padding: 0 20px;
+                        input[type=text],input[type=email]{
+                            width: 70%;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }  
+}

@@ -11,7 +11,6 @@
                 margin-bottom: 100px;
                 position: relative;
 
-
                 &::after{
                     content: '';
                     display: block;
@@ -66,57 +65,11 @@
                 }
             }
 
-            // 채널정보
-            .channerInfo{
-                border: 1px solid red;
-                width: 70%;
-                padding: 50px 0;
-                margin: 0 auto;
-    
-                &::after{
-                    content: '';
-                    display: block;
-                    clear: both;
-                }
-                .pic{
-                    width: 300px;
-                    // height: 300px;
-                    border: 1px solid red;
-                    float: left;
-                    text-align: center;
-                    img{
-                        display: inline-block;
-                        width: 200px;
-                        height: 200px;
-                        border-radius: 50%;
-                        margin-bottom: 20px;
-                    }
-                    a{
-                        display: inline-block;
-                        text-align: center;
-                        width: 150px;
-                        height: 40px;
-                        background: $red;
-                        border-radius: 5px;
-                        font: bold 18px/44px $subfont;
-                        color: $standard;
-                    }
-                }
-                .con{
-                    border: 1px solid red;
-                    width: calc(100% - 300px);
-                    float: right;
-                    padding: 30px;
-                    color: $standard;
-                }
-            }
-
             // 비디오 리스트
             .vidList{
                 border: none;
                 width: 100%;
                 
-
                 &::after{
                     content: '';
                     display: block;
@@ -124,7 +77,7 @@
                 }                
                 .vids{
                     width: calc(100%/3);
-                    height: 380px;
+                    height: 350px;
                     float: left;
                     position: relative;
                     transition: .5s;
@@ -165,6 +118,7 @@
                         .con{
                             color: $standard;
                             padding: 10px;
+                            position: relative;
                             
                             h2{
                                 font: bold 20px/1 $subfont;
@@ -175,19 +129,20 @@
                             p{
                                 padding: 10px 0;
                                 font: 300 14px/1.2 $subfont;
-                                letter-spacing: 1px;
+                                
                                 color: #878787;
                                 word-break: break-all;
                             }
+                            span{
+                                font: normal 12px/1 $subfont;
+                                color: #999;
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                            }
                         }
                     }
-                    span{
-                        font: normal 12px/1 $subfont;
-                        color: #999;
-                        position: absolute;
-                        bottom: 30px;
-                        right: 30px;
-                    }
+
                 }
             }
         }
@@ -210,5 +165,176 @@
         text-align: center;
         transition: .5s;
         &:hover{color: $onblackbg;}
+    }
+}
+
+// 890px ~ 1179px
+@media screen and(max-width: $tablet){
+    .youtube{
+        .inner{
+            padding-top: 50px;
+            section{    
+                // 미리보기
+                .preview{
+                    // border: 1px solid red;
+                    height: 300px;
+                    margin-bottom: 50px;
+
+                    &::after{ bottom: -50px; }
+                    >.con{
+                        padding: 30px;
+    
+                        h2{
+                            font-size: 28px;
+                            span{font-size: 40px;}
+                        }
+                        p{
+                            font: 300 14px/1.5 $subfont;
+                            padding-right: 30px;
+                            bottom: 15px;
+                        }
+                    }
+                }
+    
+                // 비디오 리스트
+                .vidList{             
+                    .vids{
+                        height: 300px;
+    
+                        .wrap{
+                            padding: 10px;
+
+                            .con{
+                                padding: 5px;
+                                
+                                h2{font-size: 18px;}
+                                p{font-size: 12px;}
+                                span{bottom: -10px;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 750px ~ 889px
+@media screen and(max-width: 889px){
+    .youtube{
+        .inner{
+            padding-bottom: 0px;
+            section{    
+                // 미리보기
+                .preview{
+                    margin-bottom: 30px;
+                    &::after{ bottom: -30px; }
+                }
+    
+                // 비디오 리스트
+                .vidList{             
+                    .vids{
+                        height: 280px;
+    
+                        .wrap{
+                            padding: 10px;
+
+                            .con{
+                                padding: 5px;
+                                
+                                h2{font-size: 18px;}
+                                p{font-size: 12px;}
+                                span{display: none;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
+
+// 540px ~ 749px
+@media screen and(max-width: $mobile){
+    .youtube{
+        .inner{
+            section{    
+                // 미리보기
+                .preview{
+                    height: 380px;
+
+                    .video{
+                        width: 100%;
+                        height: 300px;
+                        float: left;
+                    }
+                    >.con{
+                        float: left;
+                        width: 100%;
+                        height: 20%;
+                        padding: 0 10px;
+                        text-align: left;
+                        margin-bottom: 15px;
+
+                        p{display: none;}
+                    }
+                }
+    
+            // 비디오 리스트
+            .vidList{               
+                .vids{
+                    width: calc(100%/2);
+                }
+            }
+            }
+        }
+    }
+}
+
+// ~539px
+@media screen and(max-width: 539px){
+    .youtube{
+        .inner{
+            padding-top: 20px;
+            section{    
+                // 미리보기
+                .preview{
+                    height: 320px;
+
+                    .video{height: 250px;}
+                    >.con{
+                        float: left;
+                        width: 100%;
+                        height: 20%;
+                        padding: 0 10px;
+                        text-align: left;
+                        margin-bottom: 0px;
+
+                        h2{
+                            font-size: 20px;
+                            span{font-size: 30px;}
+                        }
+                    }
+                }
+    
+            // 비디오 리스트
+            .vidList{               
+                .vids{
+                    width: calc(100%/1);
+                    height: 65vw;
+                    .wrap{ 
+                        padding-bottom: 0;
+
+                        .con{
+                            h2{
+                                text-align: center;
+                                font-size: 16px;}
+                            p{display: none;}
+                        }
+                    }
+                }
+            }
+            }
+        }
     }
 }

@@ -191,6 +191,93 @@
     }
 }
 
+// 890px ~ 1179px
+@media screen and(max-width: $tablet){
+    .gallery{
+        .inner{ 
+            padding-top: 50px;
+            //검색박스
+            >.search{
+                h2{ left: 10px;}
+                .searchBox{width: 250px;}
+                .searchBtn{
+                    width: 100px;
+                    font-size: 12px;
+                }            
+            }
+            #imgs{
+                // 갤러리 
+                .item{ width: calc(100%/4); }
+            }
+        }
+    }  
+}
+
+// 750px ~ 889px
+@media screen and(max-width: 889px){
+    .gallery{
+        .inner{ 
+            #imgs{
+                // 갤러리 
+                .item{ width: calc(100%/3); }
+            }
+        }
+    }  
+}
+
+// 540px ~ 749px
+@media screen and(max-width: $mobile){
+    .gallery{
+        .inner{ 
+        //검색박스
+        >.search{
+            text-align: left;
+            padding-left: 10px;
+            h2{display: none;}
+            .searchBox{width: 200px;}
+        }
+            #imgs{
+                // 갤러리 
+                .item{ width: calc(100%/2); }
+            }
+        }
+    } 
+}
+
+// ~539px
+@media screen and(max-width: 539px){
+    .gallery{
+        .inner{ 
+        //검색박스
+        >.search{
+            padding-left: 0;
+            .searchBox{
+                width: 180px;
+                height: 30px;
+                padding: 10px;
+            }
+            .searchBtn{
+                width: 80px;
+                height: 30px;
+                border: none;
+                margin: 0 10px;
+                font: 12px/30px 'arial';
+                background: $onblackbg;
+                color: #fff;
+                cursor: pointer;
+            }  
+        }
+            #imgs{
+                // 갤러리 
+                .item{ width: calc(100%/1); }
+            }
+        }
+    } 
+}
+
+
+
+
 // 로딩바 애니메이션
 @keyframes loading {
     0% { transform: translate(-50%,-50%) rotate(0deg); }

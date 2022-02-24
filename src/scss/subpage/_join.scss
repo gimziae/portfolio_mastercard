@@ -7,7 +7,7 @@
 
             // 회원가입 폼 뒷 배경
             .back{
-                width: 500px;
+                width: 600px;
                 z-index: -1;
                 opacity: .5;
                 position: absolute;
@@ -214,7 +214,7 @@
     .join{
         .inner{
             section{
-                .back{width: 300px;}
+                .back{width: 500px;}
                 form{
                     fieldset{
                         .agreement{
@@ -299,7 +299,7 @@
                                             
                                         } 
                                     }
-                                    // td L/O
+                                    // td L/Omit
                                     td{
                                         input[type=text], input[type=password],input[type=email], select{
                                             width: 90%;
