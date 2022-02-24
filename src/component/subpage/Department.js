@@ -110,7 +110,7 @@ export default function Department(){
                             
                         </div>
                         <div className="pic">
-                            <img src={path+'/img/welcome.jpeg'} />
+                            <img src={path+'/img/welcome.png'} />
                         </div>
                     </article>
 

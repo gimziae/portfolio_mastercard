@@ -1,94 +1,60 @@
 .join{
-    overflow: hidden;
-    // .subvisual{display: none;}
-    &.on{
-        .subvisual{ opacity: 1}
-        .inner{
-            transform: translate(0, 0) scale(1);
-            opacity: 1;     
-            .title h1{
-                &::before{width: 30%;}
-            }
-        }
-
-    }
     .inner{
-        width: 90%;
-        padding: 0;
-        transform: translate(0, 0) scale(1.02);
-        transition: 1s;
-
-        &::after{
-            content: '';
-            display: block;
-            clear: both;
-        }
-        .title{
-            width: 45%;
-            height: 1043px;
-            float: left;
-            position: relative;
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                filter: brightness(.6);
-                //transform: translateX();
-            }
-            >h1{
-                position: absolute;
-                top: 25%;
-                left: 20px;
-                font: 300 45px/1.1 $subfont;
-                color: #fff;
-
-                &::before{
-                    content: '';
-                    display: block;
-                    width: 0%;
-                    height: 3px;
-                    background: $onblackbg;
-                    position: absolute;
-                    bottom: -10px;
-                    transition: 1s .5s;
-                }
-            }
-
-        }
+        padding-top: 50px;
         section{
-            width: 55%;
-            float: right;
-            background: rgba(0,0,0,.2);
-            padding-bottom: 0;
+            width: 100%;
             position: relative;
 
+            // 회원가입 폼 뒷 배경
             .back{
                 width: 500px;
                 z-index: -1;
-                opacity: .7;
+                opacity: .5;
                 position: absolute;
                 top: 50%; left: 50%;
                 transform: translate(-50%,-50%);
                 img{ width: 100%; }
             }
-            .success{
-                width: 100%;
-                padding: 20px;
-                font: bold 16px/1 'doodle';
-                color: $onblackbg;
-            }
+
+            // 회원가입 양식
             form{
                 width: 100%;
-                background: rgba(255, 255, 255, 0.8);
+                background: rgba(75,75,75,.4);
                 padding: 0px 30px;
                 fieldset{
                     width: 100%;
-
-                    .terms{
+                    // Term & policy
+                    >h2{
+                        font: bold 20px/1 $subfont;
+                        color: $standard;
+                        padding: 10px;
+                    }
+                    #terms{
                         width: 100%;
                         height: 200px;
                         resize: none;
+                        padding: 5px 15px;
+                        margin-bottom: 10px;
                     }
+                    .agreement{
+                        text-align: right;
+                        margin-right: 20px;
+                        margin-bottom: 50px;
+                        color: $standard;
+                        position: relative;
+                        #agree{
+                            margin-right: 5px;
+                        }
+                        span{
+                            font: normal 10px/1 'arial';
+                            color: $onblackbg;
+                            position: absolute;
+                            right: -20px;
+                            bottom: -12px;
+                        }    
+                    }
+
+                    // 회원가입 양식 테이블
                     table{
                         width: 100%;
                         border-collapse: collapse;                       
@@ -101,14 +67,14 @@
                                 // 공통 레이아웃
                                 th, td{ 
                                     padding: 20px 30px;
-                                    border-bottom: 1px solid #ccc;
+                                    border-bottom: 1px solid #545454;
                                 }
 
                                 // th L/O
                                 th{ 
                                     width: 10%;
                                     text-align: left;
-                                    color: $elite;
+                                    color: $standard;
 
                                     &.btnSet{ 
                                         width: 100%;
@@ -120,12 +86,11 @@
                                             width: 120px;
                                             height: 30px;
                                             margin: 0 30px;
-                                            border-radius: 15px;
                                             background: $onblackbg;
                                             border: none;
                                             color: #fff;
-                                            font: 12px/32px $subfont;
-                                            letter-spacing: 2px;
+                                            font: bold 12px/32px $subfont;
+                                            letter-spacing: 1px;
                                             cursor: pointer;
                                             transition: .5s;
 
@@ -142,7 +107,7 @@
                                     position: relative;
 
                                     input[type=text], input[type=password],input[type=email], select{
-                                        width: 70%;
+                                        width: 40%;
                                         padding: 5px 10px;
                                         border: 1px solid #ccc;
                                     }
@@ -152,7 +117,8 @@
                                         }
                                     }
                                     textarea{
-                                        width: 100%;
+                                        width: 70%;
+                                        height: 200px;
                                         padding: 5px 10px;
                                         resize: none;
                                         border: 1px solid #ccc;
@@ -160,7 +126,7 @@
                                     label{
                                         font: 12px/1 'arial';
                                         margin-right: 10px;
-                                        color: #555;
+                                        color: $standard;
                                     }
                                     input[type=radio], input[type=checkbox]{
                                         margin-right: 20px;
@@ -169,11 +135,183 @@
 
                                     .err{
                                         font: normal 10px/1 'arial';
-                                        color: $red;
+                                        color: $onblackbg;
                                         position: absolute;
                                         left: 32px;
-                                        bottom: 8px;
+                                        bottom: 5px;
                                     }                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 회원가입 완료 메세지
+            .success{
+                width: 100%;
+                padding: 20px;
+                font: normal 20px/1 'doodle';
+                color: $onblackbg;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// 890px ~ 1179px
+@media screen and(max-width: $tablet){
+    .join{
+        .inner{
+            section{
+                form{
+                    fieldset{
+                        table{                   
+                            tbody{
+                                tr{
+                                    // td L/O
+                                    td{
+                                        input[type=text], input[type=password],input[type=email], select{width: 50%;}
+                                        textarea{ width: 80% }                                 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 750px ~ 889px
+@media screen and(max-width: 889px){
+    .join{
+        .inner{
+            section{
+                form{
+                    fieldset{
+                        table{                   
+                            tbody{
+                                tr{
+                                    // td L/O
+                                    td{
+                                        input[type=text], input[type=password],input[type=email], select{width: 60%;}
+                                        textarea{ width: 90% }                                 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 540px ~ 749px
+@media screen and(max-width: $mobile){
+    .join{
+        .inner{
+            section{
+                .back{width: 300px;}
+                form{
+                    fieldset{
+                        .agreement{
+                            margin-bottom: 20px;
+                            #agree{width: 12px; height: 12px;}
+                            label{font-size: 12px;}
+                        }
+                        table{                   
+                            tbody{
+                                tr{
+                                    // th,td 공통 L/O
+                                    th,td{
+                                        padding: 20px 10px;
+                                        font-size: 12px;
+                                    }
+
+                                    // th L/O
+                                    th{
+                                        &.btnSet{ 
+                                            input[type=reset], input[type=submit]{
+                                                width: 100px;
+                                                margin: 0 15px;
+                                                font-size: 10px;
+                                            }
+                                            
+                                        } 
+                                    }
+                                    // td L/O
+                                    td{
+                                        input[type=text], input[type=password],input[type=email], select{
+                                            width: 80%;
+                                            font-size: 12px;
+                                        }
+                                        textarea{ 
+                                            width: 100%; 
+                                            font-size: 12px;
+                                        }       
+                                        
+                                        .err{ left: 12px; } 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ~539px
+@media screen and(max-width: 539px){
+    .join{
+        .inner{
+            padding-bottom: 50px;
+            section{
+                .back{width: 250px;}
+                form{
+                    padding: 0 15px;
+                    fieldset{
+                        #terms{font-size: 10px; padding: 5px 10px;}
+                        .agreement{margin-bottom: 0;}
+                        table{                   
+                            tbody{
+                                tr{
+                                    // th,td 공통 L/O
+                                    th,td{
+                                        padding: 20px 10px;
+                                        font-size: 12px;
+                                    }
+
+                                    // th L/O
+                                    th{
+                                        display: none;
+                                        &.btnSet{ 
+                                            display: block;
+                                            input[type=reset], input[type=submit]{
+                                                width: 100px;
+                                                margin: 0 15px;
+                                                font-size: 10px;
+                                            }
+                                            
+                                        } 
+                                    }
+                                    // td L/O
+                                    td{
+                                        input[type=text], input[type=password],input[type=email], select{
+                                            width: 90%;
+                                            font-size: 10px;
+                                        }
+                                        textarea{ 
+                                            width: 100%; 
+                                            font-size: 12px;
+                                        }       
+                                        
+                                        .err{ left: 12px; } 
+                                    }
                                 }
                             }
                         }

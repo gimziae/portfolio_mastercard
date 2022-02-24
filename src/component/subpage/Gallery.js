@@ -129,7 +129,7 @@ export default function Gallery(){
         main.current.classList.add('on');
         getFlickr({
             type: 'interest',
-            count: 50
+            count: 30
         });
     },[]);
 
@@ -149,12 +149,10 @@ export default function Gallery(){
                 
                 </article>
 
-
-                {/* 제목 클릭 시 flickr interest 동작 */}
-                <h2 onClick={showInterest}>GALLERY</h2>
-
                 {/* 검색기능 */}
                 <div className="search">
+                    {/* 제목 클릭 시 flickr interest 동작 */}
+                    <h2 onClick={showInterest}>GALLERY</h2>
                     <input 
                         type="text" 
                         className="searchBox" 
@@ -163,8 +161,10 @@ export default function Gallery(){
                         onKeyUp={showSearchEnter}/>
                     <button className="searchBtn" onClick={showSearch}>SEARCH</button>
                 </div>
+
                 {/* 로딩바 */}
                 {loading ? <div className="loading"><span>LOADING</span></div> : null}
+                
                 <section id="imgs" ref={frame}>
                     {/* flickr api 호출 */}
                     <Masonry 

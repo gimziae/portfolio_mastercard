@@ -67,6 +67,12 @@ export default function Join(){
 
 
         //인수로 받은 val이 조건에 부합하면 실행
+        if(!val.agree){
+            errs.agree = '필수 체크 사항입니다.'
+        }
+        if(!val.card){
+            errs.card ='카드 종류를 선택해 주세요.';
+        }
         if( val.userId.length < 5){
 
             errs.userId = '아이디를 5글자 이상 입력하세요.'
@@ -74,7 +80,7 @@ export default function Join(){
 
         if( val.pwd.length < 8 || !eng.test(val.pwd) || !num.test(val.pwd) || !spc.test(val.pwd)){
 
-            errs.pwd = '비밀번호는 문자, 숫자, 특수문자를 포함한 8글자 이상 입력해 주세요.';
+            errs.pwd = '대/소문자, 숫자, 특수문자를 포함한 8글자 이상 입력해 주세요.';
         }
         if( val.pwd !== val.repwd){
 
@@ -87,10 +93,6 @@ export default function Join(){
         if( !val.gender){
 
             errs.gender = '성별을 선택해 주세요.';
-        }
-        if( !val.interest){
-
-            errs.interest = '취미를 하나 이상 선택해주세요.';
         }
         if( !val.edu ){
 
@@ -129,30 +131,63 @@ export default function Join(){
     const path = process.env.PUBLIC_URL;
     return(
         <main className="content join" ref={main}>
-            {/* <figure className="subvisual">
+            <figure className="subvisual">
                 <img src={path+'/img/join_sub.jpeg'} />
-            </figure> */}
+                <div className="con">
+                    <h1>Join member <br /> Mastercard</h1>      
+                </div>
+            </figure>
 
             <div className="inner">
-                <div className="title">
-                    <img src={path+'/img/join_sub.jpeg'} />
-                    <h1>Join member <br /> Mastercard</h1>                      
-                </div>
-   
-                <section>
+                <section>   
                     <div className="back">
                         <img src={path+'/img/joinback.png'}/>
                     </div>
-                    { success ? <div className="success">회원가입을 축하합니다.</div> : null}
                     {/* submit 제출 시 handleSubmit 함수 호출 */}
                     <form onSubmit={handleSubmit}>
                         <fieldset>
-                            <label htmlFor="terms">terms & policy</label>
-                            <textarea name="terms" className="terms">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non magnam, rerum in facere perferendis quibusdam molestiae accusantium est temporibus sint ex provident soluta ut enim ea commodi odio quis! Odit consectetur cum fugit, eaque et alias ex veniam tempore hic pariatur eligendi magni, tempora quasi ullam necessitatibus amet optio voluptatibus labore est numquam praesentium neque quis. Cumque et repellendus deleniti modi in, explicabo dolores molestiae provident cupiditate voluptatibus ipsam placeat vel error perspiciatis illum eaque possimus, accusamus non minima ullam! Fuga nulla quidem quae officia delectus alias sed illum doloremque soluta id laborum hic, similique quam, labore ducimus asperiores error?</textarea>
                             <legend className="hidden">회원가입 양식</legend>
+                            <h2><label for="terms">TERMS & POLICY</label></h2>
+                            <textarea name="terms" id="terms">
+                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores reiciendis enim fugiat deserunt iste iusto assumenda dignissimos soluta labore ad quam vel cupiditate cumque ea, laudantium, consequuntur eius nesciunt dolor sequi officiis ullam a quas fugit eligendi! Sapiente perferendis praesentium omnis nostrum, consequuntur unde, reprehenderit deserunt asperiores vero culpa ipsam. Culpa illo, consequatur, provident totam rem est sint accusamus quam quos veritatis ad hic unde! Nobis voluptatum illum in! Illum facere tenetur nisi quis vero commodi laborum fugit officiis at expedita atque voluptatum natus sunt ratione, ipsum aut odit et tempora, quia similique. Iste a blanditiis, dolore alias eum molestiae accusamus tenetur voluptatum cupiditate esse quo nemo necessitatibus voluptatem nulla. Odit consequatur quidem animi non iste magnam temporibus, ullam quam ea vitae sunt aut magni neque illo perferendis, eveniet labore. Minus, est iste impedit similique eligendi doloremque ea explicabo neque labore dolorem officiis ipsa nam perferendis id ut illo totam obcaecati ex. Necessitatibus laboriosam quisquam ipsam similique est, fuga suscipit iure amet porro ullam aperiam voluptates pariatur, fugiat sunt aspernatur odit quae. Itaque voluptatem, voluptas nisi expedita tenetur a distinctio commodi, quod cumque sit perferendis! Consequuntur praesentium explicabo architecto dolorum eaque? Maiores provident ullam ducimus dolores necessitatibus fugiat hic doloremque.
+                            </textarea>
+
+                            <div className="agreement">
+                                <input 
+                                    type="checkbox" 
+                                    name="agree" 
+                                    id="agree"
+                                    value={val.agree}
+                                    onChange={handleCheck}     
+                                />
+                                <label htmlFor="agree">agree *</label>
+                                <span className="err">{err.agree}</span>
+                            </div>
+
                             <table>
                                 <caption className="hidden">회원가입 입력</caption>
                                 <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <label htmlFor="card">CARD TYPE</label>
+                                        </th>
+                                        <td>
+                                            <select 
+                                                name="card" 
+                                                id="card"
+                                                onChange={handleSelect}
+                                                >
+                                                <option value="">생성할 카드를 선택해 주세요.</option>
+                                                <option value="standard">STARNDARD
+                                                </option>
+                                                <option value="world">WORLD
+                                                </option>
+                                                <option value="elite">ELITE
+                                                </option>
+                                            </select>
+                                            <span className="err">{err.card}</span>
+                                        </td>
+                                    </tr>
                                     {/* userid */}
                                     <tr>
                                         <th scope="row">
@@ -248,34 +283,6 @@ export default function Join(){
                                         </td>
                                     </tr>
 
-                                    {/* interest */}
-                                    <tr>
-                                        <th scope="row">INTEREST</th>
-                                        <td>
-                                            <label htmlFor="sports">Sports</label>
-                                            <input 
-                                                type="checkbox" 
-                                                name="interest" 
-                                                id="sports" 
-                                                onChange={handleCheck}
-                                            />
-                                            <label htmlFor="cooking">Cooking</label>
-                                            <input 
-                                                type="checkbox" 
-                                                name="interest" 
-                                                id="cooking" 
-                                                onChange={handleCheck}
-                                            />
-                                            <label htmlFor="music">Music</label>
-                                            <input 
-                                                type="checkbox" 
-                                                name="interest" 
-                                                id="music" 
-                                                onChange={handleCheck}
-                                            />
-                                            <span className="err">{err.interest}</span>
-                                        </td>
-                                    </tr>
 
                                     {/* edu */}
                                     <tr>
@@ -326,6 +333,7 @@ export default function Join(){
                             </table>
                         </fieldset>
                     </form>
+                    { success ? <div className="success">🎉 회원가입을 축하합니다. 🎉</div> : null}
                 </section>
             </div>
         </main>
