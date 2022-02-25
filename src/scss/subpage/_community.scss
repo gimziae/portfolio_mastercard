@@ -1,9 +1,118 @@
 .community{
     .inner{
-        padding-top: 50px;
-        padding-bottom: 200px;
         section{
-            padding: 0;
+            // 아티클
+            .mission{
+                // border: 1px solid red;
+                width: 100%;
+                position: relative;
+                margin-bottom: 100px;
+                padding: 0 50px;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+                .video_wrap{
+                    // border: 1px solid red;
+                    width: 350px;
+                    height: 700px;
+                    border-radius: 350px 0 0 350px;
+                    overflow: hidden;
+                    float: left;
+
+                    video{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .txt{
+                    // border: 1px solid red;
+                    width: calc(100% - 350px);
+                    padding-left: 30px;
+                    float: right;
+                    >span{
+                        font: bold 14px/1 $subfont;
+                        color: #767676;
+                        margin-bottom: 30px;
+                        display: block;
+                    }
+                    >h2{
+                        width: 90%;
+                        font: normal 40px/1.2 $subfont;
+                        color: #e1e1e1;
+                        word-break: break-all;
+                        margin-bottom: 30px;
+                        span{color: $onblackbg;}
+                    }
+                    p{
+                        width: 50%;
+                        font: 300 16px/1.6 $subfont;
+                        color: #787878;
+                    }
+                }
+
+                .logo{
+                    // border: 1px solid red;
+                    float: right;
+                    width: 30%;
+                    position: relative;
+                    margin-top: 80px;
+
+                    &:hover{
+                        .logo_wrap{
+                            div{
+                                opacity: .5;
+                                border: none;
+                                &:nth-of-type(1){background-color: $red;}
+                                &:nth-of-type(2){background-color: $orange;}
+                            } 
+                        } 
+                        a{opacity: 1;}
+                    }
+
+                    .logo_wrap{
+                        // border: 1px solid red;
+                        display: inline-block;
+                        width: 110px;
+                        height: 70px;
+                        position: relative;
+                        
+                        div{
+                            width: 70px;
+                            height: 70px;
+                            border-radius: 50%;
+                            border: 1px solid $standard;
+                            position: absolute;
+                            transition: ease-in-out 1s;
+                            &:nth-of-type(2){right: 0;}
+                        }
+                    }
+                    a{
+                        display: inline-block;
+                        width: calc(100% - 110px);
+                        font: 300 20px/1 $subfont;
+                        color: $standard;
+                        text-decoration: underline;
+                        position: absolute;
+                        top: 50%; right: -10px;
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                        opacity: .6;
+                        transition: 1s;
+                    }
+                }
+            }
+
+            // 게시판 보드
+            >h1{
+                font: bold 30px/1 $subfont;
+                color: $standard;
+                padding: 10px 20px;
+                letter-spacing: 1px;
+            }
             #board{
                 height: 900px;
                 border-top: 2px solid #ffb95083;
@@ -153,117 +262,259 @@
 
                 }                
             }
+        }
+    }
+}
 
-            >h1{
-                font: bold 30px/1 $subfont;
-                color: $standard;
-                padding: 10px 20px;
-                letter-spacing: 1px;
-            }
-            .mission{
-                // border: 1px solid red;
-                width: 100%;
-                position: relative;
-                margin: 100px 0;
-                padding: 0 50px;
-
-                &::after{
-                    content: '';
-                    display: block;
-                    clear: both;
-                }
-                .video_wrap{
-                    // border: 1px solid red;
-                    width: 350px;
-                    height: 700px;
-                    border-radius: 350px 0 0 350px;
-                    overflow: hidden;
-                    float: left;
-
-                    video{
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                }
-                .txt{
-                    // border: 1px solid red;
-                    width: calc(100% - 350px);
+// 890px ~ 1179px
+@media screen and(max-width: $tablet){
+    .community{
+        .inner{
+            section{
+                // 아티클
+                .mission{
                     padding-left: 30px;
-                    float: right;
-                    >span{
-                        font: bold 14px/1 $subfont;
-                        color: #767676;
-                        margin-bottom: 30px;
-                        display: block;
+                    padding-right: 0;
+    
+                    .video_wrap{
+                        width: 300px;
+                        height: 600px;
+                        border-radius: 300px 0 0 300px;
                     }
-                    >h2{
-                        width: 90%;
-                        font: normal 40px/1.2 $subfont;
-                        color: #e1e1e1;
-                        word-break: break-all;
-                        margin-bottom: 30px;
-                        span{color: $onblackbg;}
-                    }
-                    p{
-                        width: 50%;
-                        font: 300 16px/1.6 $subfont;
-                        color: #787878;
-                    }
-                }
-
-                .logo{
-                    // border: 1px solid red;
-                    float: right;
-                    width: 30%;
-                    position: relative;
-                    margin-top: 80px;
-
-                    &:hover{
-                        .logo_wrap{
-                            div{
-                                opacity: .5;
-                                border: none;
-                                &:nth-of-type(1){background-color: $red;}
-                                &:nth-of-type(2){background-color: $orange;}
-                            } 
-                        } 
-                        a{opacity: 1;}
-                    }
-
-                    .logo_wrap{
-                        // border: 1px solid red;
-                        display: inline-block;
-                        width: 110px;
-                        height: 70px;
-                        position: relative;
-                        
-                        div{
-                            width: 70px;
-                            height: 70px;
-                            border-radius: 50%;
-                            border: 1px solid $standard;
-                            position: absolute;
-                            transition: ease-in-out 1s;
-                            &:nth-of-type(2){right: 0;}
+                    .txt{
+                        width: calc(100% - 300px);
+                        padding-left: 30px;
+                        >h2{width: 100%;
+                            font-size: 32px;}
+                        p{
+                            width: 60%;
+                            font-size: 14px;
                         }
                     }
-                    a{
-                        display: inline-block;
-                        width: calc(100% - 110px);
-                        font: 300 20px/1 $subfont;
-                        color: $standard;
-                        text-decoration: underline;
-                        position: absolute;
-                        top: 50%; right: -10px;
-                        transform: translateY(-50%);
-                        cursor: pointer;
-                        opacity: .6;
-                        transition: 1s;
-                    }
+
+                }
+    
+                // 게시판 보드
+                #board{
+                    height: 900px;
+                    // 입력창
+                    .inputBox{ width: 35%; }
+    
+                    // 출력창
+                    .showList{
+                        width: 65%;
+                        .wrap{
+                            // 출력된 아티클들 속성
+                            article{
+                                padding: 20px 30px;
+                            }
+                        }
+    
+                    }                
                 }
             }
-            
+        }
+    }
+}
+
+// 750px ~ 889px
+@media screen and(max-width: 889px){
+    .community{
+        .inner{
+            section{
+                // 아티클
+                .mission{
+                    .video_wrap{
+                        // border: 1px solid red;
+                        width: 250px;
+                        height: 500px;
+                        border-radius: 250px 0 0 250px;
+                    }
+                    .txt{
+                        // border: 1px solid red;
+                        width: calc(100% - 250px);
+                        padding-left: 20px;
+                        >span{font-size: 12px;}
+                        >h2{font-size: 25px;}
+                        p{ width: 80%; }
+                    }
+    
+                    .logo{   
+                        width: 40%;
+                        margin-top: 50px;
+                        .logo_wrap{
+                            width: 80px;
+                            height: 50px;
+                            
+                            div{
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
+                        a{
+                            width: calc(100% - 80px);
+                            font-size: 16px;
+                        }
+                    }
+                }
+    
+                // 게시판 보드
+                >h1{font-size: 25px;}
+                #board{
+                    height: 1000px;
+                    padding: 20px 10px;
+                    // 입력창
+                    .inputBox{
+                        width: 100%;
+                        height: 340px;
+                        padding: 0px;
+                        margin-bottom: 20px;
+    
+                        .wrap{
+                            input{margin-bottom: 10px;}
+                        }
+
+                    }
+    
+                    // 출력창
+                    .showList{
+                        width: 100%;
+                        padding: 0;
+                        height: calc(100% - 360px);
+                        border-left: none;
+                    }                
+                }
+            }
+        }
+    }
+}
+
+// 540px ~ 749px
+@media screen and(max-width: $mobile){
+    .community{
+        .inner{
+            padding-top: 50px;
+            section{
+                // 아티클
+                .mission{
+                    padding: 0 40px;
+                    margin-bottom: 50px;
+                    .video_wrap{
+                        width: 100%;
+                        height: 250px;
+                        border-radius: 0 0;
+                        margin-bottom: 20px;
+                    }
+                    .txt{
+                        // border: 1px solid red;
+                        width: 100%;
+                        padding-left: 0px;
+                        float: right;
+                        >span{
+                            font: bold 14px/1 $subfont;
+                            color: #767676;
+                            margin-bottom: 20px;
+                            display: block;
+                        }
+                        >h2{
+                            width: 100%;
+                            font: normal 25px/1.2 $subfont;
+                            margin-bottom: 0px;
+                        }
+                        p{display: none;}
+                    }
+
+                    .logo{   
+                        width: 40%;
+                        margin-top: 20px;
+                        .logo_wrap{
+                            width: 80px;
+                            height: 50px;
+                            
+                            div{
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
+                        a{
+                            width: calc(100% - 80px);
+                            font-size: 16px;
+                        }
+                    }
+                }
+    
+                // 게시판 보드
+                #board{
+                    // 출력창
+                    .showList{
+                        .wrap{
+                            article{
+                                padding: 30px;
+                                .post{
+                                    // 초기화면
+                                    h2{
+                                        font: bold 16px/1 'arial';
+                                        &::after { margin-top: 7px; }
+                                    }
+                                    p{
+                                        font: 300 14px/1.6 '$subfont';
+                                        width: 90%;
+                                    }
+                                }
+
+                                // 수정 & 삭제버튼
+                                .btns{
+                                    //초기화면
+                                    text-align: right;
+                                    button{ margin-left: 10px; }
+                                }
+                            }
+                        }
+                    }                
+                }
+            }
+        }
+    }
+}
+
+// ~539px
+@media screen and(max-width: 539px){
+    .community{
+        .inner{
+            padding-top: 20px;
+            section{
+                // 아티클
+                .mission{ display: none;}
+    
+                // 게시판 보드
+                >h1{font-size: 20px;}
+                #board{
+                    padding: 10px 0;
+                    // 입력창
+                    .inputBox{
+                        height: 280px;
+                        .wrap{
+                            padding: 20px 10px;
+                            textarea{ height: 150px; }
+                            .inputBtns{
+                                button{
+                                    width: 80px;
+                                    font-size: 10px;
+                                }                    
+                            }
+                        }
+                        
+                    }
+                    // 출력창
+                    .showList{
+                        height: calc(100% - 300px);
+                        .wrap{
+                            padding: 20px 10px;
+                            article{ padding: 20px; }
+                        }
+                    }                
+                }
+            }
         }
     }
 }
