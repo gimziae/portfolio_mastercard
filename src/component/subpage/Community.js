@@ -229,25 +229,6 @@ export default function Community(){
 
                         </div>                        
                     </div>
-                    
-                    {/* <div className="mission">
-                        <div className="video_wrap">
-                            <video src={path+'/img/community.mp4'} autoPlay muted loop></video>
-                        </div>
-                        <div className="txt">
-                            <span>SUSTAINABILITY AT MASTERCARD</span>
-                            <h2>OUR MISSION IS TO CONNECT AND <br /> POWER A DIGITAL ECONOMY THAT <br /> BENEFITS EVERYONE, EVERYWHERE <br /> BY MAKING TRANSATIONS <br /> <span>SAFE, SIMPLE, SMART <br />AND ACCESSIBLE.</span></h2>
-                            <p>We understand how interconnected the world is, and we see firsthand how our commitment to environmental and social responsibility - and our core values of operating ethically and responsibly and with decency - is directly connected to our continuing success as a business.</p>
-                        </div>
-
-                        <div className="logo">
-                            <div className="logo_wrap">
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <a href="#">MORE ABOUT <br />MASTERCARD</a>
-                        </div>
-                    </div> */}
 
 
                 </section>

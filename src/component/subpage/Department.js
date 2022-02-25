@@ -1,7 +1,8 @@
 import { useEffect,useRef,useState } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightLong, faPlus } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function Department(){
     let main = useRef(null);
@@ -101,6 +102,9 @@ export default function Department(){
                     </div>
 
                     <article className="welcome">
+                        <div className="pic">
+                            <img src={path+'/img/welcome.png'} />
+                        </div>
                         <div className="txt">
                             <p>
                                 Our journey toward equity and inclusion should never end. There will always be more for us to understand and do. But we progress in the right direction every day that we choose to bring our decency to the forefront of every interaction, to listen to people, to see them for who they are and what they need, to find ways to level the playing fields and build pathways to opportunity for everyone.
@@ -108,9 +112,6 @@ export default function Department(){
                                 <span>- Joshep, CEO</span>
                             </p>
                             
-                        </div>
-                        <div className="pic">
-                            <img src={path+'/img/welcome.png'} />
                         </div>
                     </article>
 
@@ -123,6 +124,7 @@ export default function Department(){
                                         <img src={`${path}/img/${data.pic}`} />
                                     </div>
                                     <div className="con">
+                                        <FontAwesomeIcon icon={faPlus} />
                                         <h3>{data.name}</h3>
                                         <span>{data.position}</span>
                                         <p>
