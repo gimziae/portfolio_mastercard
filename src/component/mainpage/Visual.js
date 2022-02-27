@@ -11,7 +11,7 @@ export default function Visual(){
     },[])
 
     return(
-        <section id="visual">
+        <section id="visual" className="myScroll">
             <div className="inner">
                 <main>
                     <p className="welcome">WELCOME TO MASTERCARD</p>

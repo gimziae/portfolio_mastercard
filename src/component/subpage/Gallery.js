@@ -145,9 +145,9 @@ export default function Gallery(){
             </figure>
             <div className="inner">
                 {/* visual */}
-                <article>
+                {/* <article>
                 
-                </article>
+                </article> */}
 
                 {/* 검색기능 */}
                 <div className="search">

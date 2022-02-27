@@ -1,3 +1,28 @@
 #btns{
     position: fixed;
+    top: 50%;
+    right: 1vw;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    li{
+        // border: 1px solid red;
+        width: 8px;
+        height: 10px;
+        border-radius: 5px;
+        border: 1px solid $standard;
+        background: transparent;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: .5s;
+        transform: translateX(-50%);
+    
+
+        &.on{
+            width: 8px;
+            height: 75px;
+            border: none;
+            background: $onblackbg;
+        }
+    }
 }
