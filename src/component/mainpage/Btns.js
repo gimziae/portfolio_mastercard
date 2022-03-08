@@ -6,6 +6,7 @@ export default function Btns(props){
             <li onClick={()=>{props.getIndex(1)}}></li>
             <li onClick={()=>{props.getIndex(2)}}></li>
             <li onClick={()=>{props.getIndex(3)}}></li>
+            <li onClick={()=>{props.getIndex(4)}}></li>
         </ul>
     )
 }

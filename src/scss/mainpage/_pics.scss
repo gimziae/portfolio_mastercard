@@ -1,0 +1,36 @@
+#pics{
+    width: 100%;
+    // height: 60vh;
+    padding: 100px 0;
+    position: relative;
+    
+    &::before{
+        content: '';
+        display: block;
+        width: 1180px;
+        height: 1px;
+        background: $elite;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .inner{
+        width: 1180px;
+        // height: 100%;
+        margin: 0 auto;
+        position: relative;
+
+        main{
+            h1{
+                font: normal 40px/1 $subfont;
+                color: $standard;
+                // transform: translateX(-100px);
+                // opacity: .5;
+                transition: 1s;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}

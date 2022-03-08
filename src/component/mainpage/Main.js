@@ -3,8 +3,10 @@ import Intro from './Intro';
 import Visual from './Visual';
 import News from './News';
 import Info from "./Info";
+import Pics from "./Pics";
 import Btns from "./Btns";
 import Anime from "../class/Anime";
+
 import { useEffect, useRef, useState } from "react";
 
 
@@ -69,9 +71,17 @@ export default function Main(){
             <Intro 
                 scrolled={scrolled}
                 posStart={pos.current[1]}
+            /> 
+            <News
+                scrolled={scrolled}
+                posStart={pos.current[2]}
             />
-            <Info />
-            <News />   
+            <Info
+                scrolled={scrolled}
+                posStart={pos.current[3]}
+            />
+            <Pics />
+              
             <Btns getIndex={getIndex}/>     
         </div>
     )

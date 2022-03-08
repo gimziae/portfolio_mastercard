@@ -17,8 +17,8 @@ export default function Intro({scrolled, posStart}){
     // 스크롤모션 적용
     const base = -300;
     const start = posStart+base;
-    console.log(start);
-    console.log(scrolled);
+    // console.log(start);
+    // console.log(scrolled);
 
     return(
         <section id="intro" className="myScroll">
