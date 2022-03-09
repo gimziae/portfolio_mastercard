@@ -38,9 +38,13 @@
         'http://gimziae.github.io/portfolio_mastercard/img/gallery_sub.jpeg',
         'http://gimziae.github.io/portfolio_mastercard/img/department_sub.jpeg',
         'http://gimziae.github.io/portfolio_mastercard/img/join_sub.jpeg',
+      ];
+      const vids = [
+        'http://gimziae.github.io/portfolio_mastercard/img/Header_video.mp4',
+      ]
+      const lenImg = imgs.length;
+      const lenVid = vids.length;
 
-        ];
-      const len = imgs.length;
       const defaults = document.querySelector('.default');
       const mask = document.querySelector('.mask');
       let tags = '';
@@ -48,21 +52,42 @@
       imgs.forEach(src=>{
         tags +=`<img src=${src} />`;
       });
+
+      vids.forEach(src=>{
+        tags +=`<video src=${src} />`;
+      });
+
       defaults.innerHTML = tags;
 
-      let count = 0;
       const imgDOM = defaults.querySelectorAll('img');
+      let conuntImg = 0;
+      let loadedImg = false;
+
       imgDOM.forEach(img=>{
         img.onload = () => {
           count++;
-
-          if(count === len){
-            defaults.remove();
-            mask.classList.add('off');
-            setTimeout(()=>mask.remove(), 2000);
-          }
+          if(count === len) loadedImg = true;
         }
-      })
+      });
+
+      const vidDOM = defaults.querySelectorAll('video');
+      let countVid = 0;
+      let loadedVid = false;
+
+      vidDOM.forEach(vid => {
+        vid.onloadeddata = () => {
+          count++;
+          if(countVid === lenVid) loadedVid = true;
+        }
+      });
+
+      if(loadedImg && loadedVid){
+        defaults.remove();
+        mask.classList.add('off');
+        setTimeout(()=>mask.remove(), 2000);        
+      }
+
+
     </script>
   </body>
 </html>
