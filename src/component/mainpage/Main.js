@@ -25,7 +25,6 @@ export default function Main(){
         let arr = [];
         for(let sec of secs) arr.push(sec.offsetTop);
         pos.current = arr;
-        console.log(pos.current);
     }
 
 
@@ -56,7 +55,7 @@ export default function Main(){
     },[]);
 
     useEffect(()=>{
-        console.log(index);
+
         new Anime(window, {
             prop: 'scroll',
             value: pos.current[index],
@@ -80,7 +79,10 @@ export default function Main(){
                 scrolled={scrolled}
                 posStart={pos.current[3]}
             />
-            <Pics />
+            <Pics
+                scrolled={scrolled}
+                posStart={pos.current[4]}
+            />
               
             <Btns getIndex={getIndex}/>     
         </div>

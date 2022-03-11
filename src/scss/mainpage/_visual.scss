@@ -92,3 +92,95 @@
         }
     }
 }
+
+// 890px ~ 1179px
+@media screen and(max-width: $tablet){
+    #visual{
+        padding: 100px 3vw;
+        padding-top: 130px;
+    
+        .inner{
+            width: 100%;
+            
+            main{   
+                .txt{    
+                    .mainTitle{
+                        width: 65%;
+                        h1{
+                            font-size: 50px;
+                            img{height: 40px;}
+                        }
+    
+                    }
+                    .subTitle{
+                        width: 35%;
+                        p{font-size: 14px;}
+                    }
+                }
+                .pic{ height: calc(100% - 240px); }
+            }
+        }
+    }
+}
+
+// 750px ~ 889px
+@media screen and(max-width: 889px){
+    #visual{
+        .inner{
+            main{   
+                .txt{    
+                    .mainTitle{
+                        width: 65%;
+                        h1{
+                            font-size: 40px;
+                            img{height: 30px;}
+                        }
+    
+                    }
+                    .subTitle{
+                        width: 35%;
+                        p{font-size: 14px;}
+                    }
+                }
+                .pic{ height: calc(100% - 200px); }
+            }
+        }
+    }
+}
+
+// 540px ~ 749px
+@media screen and(max-width: $mobile){
+    #visual{
+        padding: 100px 5vw;
+        padding-top: 120px;
+        .inner{
+            main{   
+                .txt{    
+                    .mainTitle{ width: 80%; }
+                    .subTitle{ display: none;}
+                }
+            }
+        }
+    }
+}
+
+// ~539px
+@media screen and(max-width: 539px){
+    #visual{
+        .inner{
+            main{   
+                .welcome{font-size: 12px;}
+                .txt{    
+                    .mainTitle{ 
+                        width: 100%; 
+                        h1{
+                            font-size: 32px;
+                            img{height: 25px;}
+                        }
+                    }
+                }
+                .pic{ height: calc(100% - 160px); }
+            }
+        }
+    }
+}

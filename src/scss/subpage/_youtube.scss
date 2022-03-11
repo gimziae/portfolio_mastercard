@@ -159,12 +159,16 @@
     background: rgba(0, 0, 0, 0.3);
 
     span{
+        position: absolute;
+        top: 5vw;
+        right: 3vw;
         cursor: pointer;
         color: $standard;
         font: 15px/30px $subfont;
         text-align: center;
         transition: .5s;
         &:hover{color: $onblackbg;}
+        
     }
 }
 

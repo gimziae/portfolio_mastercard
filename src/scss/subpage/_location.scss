@@ -263,9 +263,10 @@
             >section{       
                 // 교통정보 버튼              
                 .traffic{
+                    z-index: 2;
                     position: absolute;
                     top: 230px; right: 30px;
-                    width: 100%;
+                    width: 50%;
                     text-align: right;
                     padding: 5px;
                 }                 

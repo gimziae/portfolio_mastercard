@@ -85,7 +85,7 @@ export default function Intro({scrolled, posStart}){
                                 <span>RESOURCES</span>
                                 <h1>
                                     Lorem, sit <br />
-                                    dolor amet <img src={path+'/img/logo.png'} alt="" />
+                                    dolor met <img src={path+'/img/logo.png'} alt="" />
                                 </h1>   
                                 <div className="con">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolore laboriosam pariatur suscipit nostrum libero.</p>   

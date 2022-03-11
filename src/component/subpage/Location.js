@@ -108,7 +108,7 @@ export default function Location(){
             <figure className="subvisual">
                 <img src={path+'/img/location_sub.jpeg'} />              
                 <div className="con">
-                    <h1>Creating limitless<br />possibilities for everyone</h1>                    
+                    <h1>Mastercard Locator</h1>                    
                 </div>
             </figure>
             <div className="inner">

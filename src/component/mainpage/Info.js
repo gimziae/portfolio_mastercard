@@ -26,7 +26,7 @@ export default function Info({scrolled, posStart}){
     const [posts] = useState(getLocalItems);
 
 
-    const base = -600;
+    const base = -500;
     const start = posStart+base;
 
     useEffect(()=>{
@@ -41,7 +41,7 @@ export default function Info({scrolled, posStart}){
                         scrolled>=start
                         ?
                         {
-                            transform: `translateX(0px)`,
+                            transform: `translateY(0px)`,
                             opacity: `1`
                         } 
                         : null
@@ -61,7 +61,7 @@ export default function Info({scrolled, posStart}){
                     }
                     >
                         <div className="pic">
-                            <img src={path+"/img/innovation.jpeg"} />   
+                            <img src={path+"/img/recent.jpeg"} />   
                         </div>
                         <div className="con">
                             <NavLink to='/'>NEWS</NavLink>

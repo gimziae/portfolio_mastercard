@@ -6,10 +6,9 @@
     z-index: 5;
 
     li{
-        // border: 1px solid red;
         width: 8px;
-        height: 10px;
-        border-radius: 5px;
+        height: 8px;
+        border-radius: 10px;
         border: 1px solid $standard;
         background: transparent;
         margin-bottom: 20px;
@@ -19,10 +18,11 @@
     
 
         &.on{
-            width: 8px;
+            width: 5px;
             height: 75px;
             border: none;
             background: $onblackbg;
+            border-radius: 10px;
         }
     }
 }

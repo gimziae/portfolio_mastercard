@@ -1,10 +1,8 @@
 import { NavLink } from "react-router-dom"
 ;
 export default function News({scrolled, posStart}){
-    const base = -500;
+    const base = -300;
     const start = posStart+base;
-    console.log(start);
-    console.log(scrolled);
 
     return(
         <section id="news" className="myScroll">

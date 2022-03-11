@@ -137,3 +137,214 @@
         }
     }
 }
+
+// 890px ~ 1179px
+@media screen and(max-width: $tablet){
+    #intro{
+        padding: 100px 3vw;
+    
+        &::before{ width: 95%; }
+
+        // 배경 원모양
+        .back1{
+            width: 600px;
+            height: 600px;
+        }
+        .back2{
+            width: 600px;
+            height: 600px;
+        }
+        
+        // 본문내용
+        .inner{
+            width: 100%;
+    
+            // 스와이퍼
+            .swiper{
+                .swiper-slide{
+                    // 스와이퍼 내부 모양
+                    article{
+                        .txt{
+                            h1{ font-size: 50px; }
+                            .con{
+                                width: 200px;
+                                transform: translate(-70%, -80%);
+                                p{
+                                    color: #ccc;
+                                    font: 12px/1.4 'arial';
+                                    margin-bottom: 50px;
+                                }
+                                a{
+                                    span{font-size: 12px;}
+                                }                    
+                            }
+                        }
+                    }                
+                }
+            }
+    
+            .swiper-pagination-bullet{
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+// 750px ~ 889px
+@media screen and(max-width: 889px){
+    #intro{
+        // 배경 원모양
+        .back1{
+            width: 550px;
+            height: 550px;
+        }
+        .back2{
+            width: 550px;
+            height: 550px;
+        }
+        
+        // 본문내용
+        .inner{
+            // 스와이퍼
+            .swiper{
+                .swiper-slide{
+                    // 스와이퍼 내부 모양
+                    article{
+                        .txt{
+                            .con{
+                                transform: translate(-80%, 0%);
+                                p{ margin-bottom: 20px; }                  
+                            }
+                        }
+                    }                
+                }
+            }
+        }
+    }
+}
+
+// 540px ~ 749px
+@media screen and(max-width: $mobile){
+    #intro{
+        padding: 80px 5vw;
+        // 배경 원모양
+        .back1{
+            width: 500px;
+            height: 500px;
+        }
+        
+        // 본문내용
+        .inner{
+            // 스와이퍼
+            .swiper{
+                .swiper-slide{
+                    // 스와이퍼 내부 모양
+                    article{
+                        .txt{
+                            width: 50%;
+                            h1{
+                                font-size: 45px;
+                            }
+                            .con{
+                                transform: translate(-110%, -10%);               
+                            }
+                        }
+                        .pic{
+                            width: 50%;
+                            height: 100%;
+                            float: right;
+                        }
+                    }                
+                }
+            }
+            .swiper-pagination-bullet{
+                transform: translate(-40px, 10px);
+            }
+        }
+    } 
+}
+
+// 450~539px
+@media screen and(max-width: 539px){
+    #intro{
+        padding: 60px 5vw;
+        // 배경 원모양
+        .back1{
+            width: 450px;
+            height: 450px;
+        }
+        .back2{
+            width: 500px;
+            height: 500px;
+        }
+
+        // 본문내용
+        .inner{
+            // 스와이퍼
+            .swiper{
+                height: 100%;
+                .swiper-slide{
+                    height: 85%;
+                    // 스와이퍼 내부 모양
+                    article{
+                        .txt{
+                            width: 100%;
+                            margin-bottom: 20px;
+                            h1{
+                                font-size: 35px;
+                                img{
+                                    height: 15px;
+                                    transform: translate(-5px ,-10px);
+                                }
+                            }
+                            .con{
+                                position: absolute;
+                                top: 0;
+                                left: auto;
+                                right: 0;
+                                transform: translate(0%, 30%);    
+                                p{
+                                    color: #ccc;
+                                    font: 12px/1.2 'arial';
+                                    margin-bottom: 10px;
+                                }
+                                a{
+                                    span{font-size: 10px;}
+                                }               
+                            }
+                        }
+                        .pic{
+                            width: 100%;
+                            height: 70%;
+                            float: left;
+                        }
+                    }                
+                }
+            }
+            .swiper-pagination-bullet{
+                transform: translate(0, 15px);
+            }
+        }
+    } 
+}
+
+// ~449px
+@media screen and(max-width: 449px){
+    #intro{
+        // 본문내용
+        .inner{
+            // 스와이퍼
+            .swiper{
+                .swiper-slide{
+                    // 스와이퍼 내부 모양
+                    article{
+                        .txt{
+                            .con{ display: none; }
+                        }
+                    }                
+                }
+            }
+        }
+    } 
+}

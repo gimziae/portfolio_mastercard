@@ -127,7 +127,7 @@ export default function Community(){
             <figure className="subvisual">
                 <img src={path+'/img/community_sub.jpeg'} />
                 <div className="con">
-                    <h1>Creating limitless<br />possibilities for everyone</h1>                    
+                    <h1>Leave your comments<br/>for a better Mastercard</h1>                    
                 </div>
             </figure>
             <div className="inner">

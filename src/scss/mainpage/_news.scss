@@ -2,6 +2,7 @@
     width: 100%;
     padding: 100px 0;
     position: relative;
+    overflow: hidden;
     
     &::before{
         content: '';
@@ -86,6 +87,109 @@
     }
 }
 
+
+// 890px ~ 1179px
+@media screen and(max-width: $tablet){
+    #news{
+        padding: 100px 3vw;
+
+        &::before{ width: 95%; }
+    
+        .inner{
+            width: 100%;
+            main{
+                width: 100%;
+                .start{
+                    float: left;
+                    width: 100%;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    p{
+                        font: normal 60px/1 $subfont;
+                        text-align: left;
+                    }
+                }
+                .more{
+                    width: 360px;
+                    position: initial;
+                    float: left;
+                    transform: translateX(42vw);
+                }
+            }
+        }
+    }   
+}
+
+// 715px ~ 889px
+@media screen and(max-width: 889px){
+    #news{
+        .inner{
+            main{
+                .start{
+                    .box{
+                        width: 200px;
+                        height: 200px;
+                    }
+                    p{
+                        font-size: 55px;
+                        margin-left: 50px;
+                    }
+                }
+                .more{
+                    // border: 1px solid red;
+                    width: 360px;
+                    position: initial;
+                    float: left;
+                    transform: translateX(38vw);
+                }
+            }
+        }
+    }   
+}
+
+// 540px ~ 714px
+@media screen and(max-width: 714px){
+    #news{
+        padding: 80px 5vw;
+        .inner{
+            main{
+                .start{
+                    margin-bottom: 0;
+                    .box{
+                        width: 200px;
+                        height: 200px;
+                        margin-bottom: 30px;
+                    }
+                    p{
+                        display: block;
+                        font: normal 50px/1.2 $subfont;
+                        text-align: center;
+                        margin-left: 0;
+                    }
+                }
+                .more{ display: none;}
+            }
+        }
+    }  
+}
+
+// ~539px
+@media screen and(max-width: 539px){
+    #news{
+        padding: 60px 5vw;
+        .inner{
+            main{
+                .start{
+                    p{
+                        font: normal 42px/1.2 $subfont;
+                    }
+                }
+            }
+        }
+    } 
+}
+
+
 @keyframes circle{
     0%{
         width: 20%;
@@ -102,4 +206,3 @@
         height: 20%;
     }
 }
-
