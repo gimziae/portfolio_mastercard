@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/portfolio_mastercard/static/css/main.9fe1ae7f.css",
+    "main.css": "/portfolio_mastercard/static/css/main.49ff6205.css",
     "main.js": "/portfolio_mastercard/static/js/main.602b215b.js",
     "index.html": "/portfolio_mastercard/index.html",
-    "main.9fe1ae7f.css.map": "/portfolio_mastercard/static/css/main.9fe1ae7f.css.map",
+    "main.49ff6205.css.map": "/portfolio_mastercard/static/css/main.49ff6205.css.map",
     "main.602b215b.js.map": "/portfolio_mastercard/static/js/main.602b215b.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fe1ae7f.css",
+    "static/css/main.49ff6205.css",
     "static/js/main.602b215b.js"
   ]
 }
