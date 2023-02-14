@@ -1,11 +1,11 @@
-#btns{
+#btns {
     position: fixed;
     top: 50%;
-    right: .5vw;
+    right: 0.5vw;
     transform: translateY(-50%);
     z-index: 5;
 
-    li{
+    li {
         width: 8px;
         height: 8px;
         border-radius: 10px;
@@ -13,11 +13,10 @@
         background: transparent;
         margin-bottom: 20px;
         cursor: pointer;
-        transition: .5s;
+        transition: 0.5s;
         transform: translateX(-50%);
-    
 
-        &.on{
+        &.on {
             width: 5px;
             height: 75px;
             border: none;
